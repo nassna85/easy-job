@@ -1,4 +1,4 @@
+const $ = require('jquery');
+global.$ = global.jQuery = $;
 
-// Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
-
+require('bootstrap');

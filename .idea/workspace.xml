@@ -5,6 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +170,8 @@
       <option name="presentableId" value="Default" />
       <updated>1575726174205</updated>
       <workItem from="1575726175346" duration="19000" />
-      <workItem from="1575726197890" duration="1347000" />
+      <workItem from="1575726197890" duration="1419000" />
+      <workItem from="1575745917776" duration="1091000" />
     </task>
     <servers />
   </component>
@@ -179,5 +183,9 @@
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="930" y="144" key="SettingsEditor/0.23.1920.970@0.23.1920.970" timestamp="1575726192167" />
+    <state x="1114" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1575745925693">
+      <screen x="0" y="23" width="1920" height="973" />
+    </state>
+    <state x="1114" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.973@0.23.1920.973" timestamp="1575745925693" />
   </component>
 </project>
