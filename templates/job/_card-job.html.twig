@@ -1,0 +1,26 @@
+<div class="job-item">
+    <div class="row align-items-center">
+        <div class="col-md-9">
+            <h3 class="heading-h3">{{ job.title }}</h3>
+            <div class="d-flex">
+                <p class="mr-3">
+                    <i class="fas fa-building"></i> {{ job.enterprise }}
+                </p>
+                <p class="mr-3">
+                    <i class="fas fa-tag"></i> {{ job.categories }}
+                </p>
+            </div>
+            <p>
+                <i class="fas fa-map-marker-alt"></i> {{ job.place }}
+            </p>
+            <div class="date-job">
+                <p>
+                    <i class="fas fa-table"></i> Publié le {{ job.createdAt | date('d/m/Y') }}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="btn btn-primary">Voir l'offre</a>
+        </div>
+    </div>
+</div>

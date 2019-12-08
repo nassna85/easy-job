@@ -30,6 +30,8 @@ Encore
     .addStyleEntry('css/app', './assets/css/app.scss')
     .addStyleEntry('css/homepage', './assets/css/homepage.scss')
     .addStyleEntry('css/variable', './assets/css/variable.scss')
+    .addStyleEntry('css/card-job', './assets/css/card-job.scss')
+    .addStyleEntry('css/jobs', './assets/css/jobs.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

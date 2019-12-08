@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos offres d'emplois{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/card-job') }}
+    {{ encore_entry_link_tags('css/jobs') }}
+{% endblock %}
+
+{% block body %}
+    <section class="jumbotron jumbotron-fluid header-jobs">
+        <div class="container">
+            <h1>Nos offres d'emplois</h1>
+            <p class="lead">Recherchez et trouvez le job idéal !</p>
+        </div>
+    </section>
+
+    <section class="jobs bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p>Ici sera le formulaire de critère de recherche</p>
+                </div>
+                <div class="col-lg-9">
+                    {% for job in jobs %}
+                        {% include 'job/_card-job.html.twig' with {job:job} only %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,14 @@
+@import "./variable.scss";
+
+section.header-jobs {
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849822_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-top: 81px;
+}
+
+section.jobs {
+  padding: 80px 0;
+}

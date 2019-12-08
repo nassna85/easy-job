@@ -128,25 +128,6 @@ section.section-recent-job-homepage {
   h2.text-center {
     margin-bottom: 70px;
   }
-  .job-item {
-    background-color: $white;
-    padding: 30px;
-    border-left: 3px solid $danger;
-    border-bottom: 1px solid $gray-400;
-    margin-top: 3rem;
-    -webkit-transition: transform .3s;
-    -moz-transition: transform .3s;
-    transition: transform .3s;
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-  i {
-    color: $primary;
-  }
-  p {
-    color: $secondary;
-  }
 }
 
 /* HOMEPAGE - SECTION CALL TO ACTION */
