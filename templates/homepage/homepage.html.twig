@@ -2,6 +2,273 @@
 
 {% block title %}Hello HomePageController!{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/homepage') }}
+{% endblock %}
+
 {% block body %}
-<h1>Hello World</h1>
+    <section class="header-homepage overlay" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/09/09/22/workplace-1245776_960_720.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <h1>Trouver un emploi</h1>
+                    <form action="#">
+                        <div class="row mb-3">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <input type="text" class="mr-3 form-control border-0 px-4" placeholder="Titre de l'emploi">
+                                    </div>
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <div class="input-wrap">
+                                            <span class="icon icon-room"></span>
+                                            <input type="text" class="form-control form-control-block search-input  border-0 px-4" placeholder="Etranger, Belgique">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" class="btn btn-search btn-primary btn-block" value="Rechercher">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-categories-homepage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                    <h2 class="mb-5">Les catégories</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-calculator mb-3 text-primary"></span>
+                        <h2>Administration et Comptabilité</h2>
+                        <span class="counting">10,391</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-wrench mb-3 text-primary"></span>
+                        <h2>Constructions</h2>
+                        <span class="counting">192</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-worker mb-3 text-primary"></span>
+                        <h2>Enseignement et Formation</h2>
+                        <span class="counting">1,021</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-telecommunications mb-3 text-primary"></span>
+                        <h2>Horeca</h2>
+                        <span class="counting">1,219</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-stethoscope mb-3 text-primary"></span>
+                        <h2>Immobilier</h2>
+                        <span class="counting">482</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-computer-graphic mb-3 text-primary"></span>
+                        <h2>Informatique</h2>
+                        <span class="counting">5,409</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="700">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-trolley mb-3 text-primary"></span>
+                        <h2>Santé</h2>
+                        <span class="counting">291</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="800">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-restaurant mb-3 text-primary"></span>
+                        <h2>Sécurité</h2>
+                        <span class="counting">329</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="800">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-restaurant mb-3 text-primary"></span>
+                        <h2>Nettoyage</h2>
+                        <span class="counting">329</span>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="800">
+                    <a href="#" class="h-100 feature-item">
+                        <span class="d-block icon flaticon-restaurant mb-3 text-primary"></span>
+                        <h2>Transport et Logistique</h2>
+                        <span class="counting">329</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-recent-job-homepage bg-light">
+        <div class="container">
+            <div class="heading-h2">
+                <h2>Emplois récent</h2>
+            </div>
+            <div class="job-item">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <h3 class="heading-h3">Développeur Web</h3>
+                        <div class="d-flex">
+                            <p class="mr-3">
+                                <i class="fas fa-building"></i> Société Info
+                            </p>
+                            <p class="mr-3">
+                                <i class="fas fa-tag"></i> Informatique
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Bruxelles
+                            </p>
+                        </div>
+                        <div class="date-job">
+                            <p>
+                                <i class="fas fa-table"></i> Publié le 26/10/2019
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-primary">Voir l'offre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <h3 class="heading-h3">Développeur Web</h3>
+                        <div class="d-flex">
+                            <p class="mr-3">
+                                <i class="fas fa-building"></i> Société Info
+                            </p>
+                            <p class="mr-3">
+                                <i class="fas fa-tag"></i> Informatique
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Bruxelles
+                            </p>
+                        </div>
+                        <div class="date-job">
+                            <p>
+                                <i class="fas fa-table"></i> Publié le 26/10/2019
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-primary">Voir l'offre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <h3 class="heading-h3">Développeur Web</h3>
+                        <div class="d-flex">
+                            <p class="mr-3">
+                                <i class="fas fa-building"></i> Société Info
+                            </p>
+                            <p class="mr-3">
+                                <i class="fas fa-tag"></i> Informatique
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Bruxelles
+                            </p>
+                        </div>
+                        <div class="date-job">
+                            <p>
+                                <i class="fas fa-table"></i> Publié le 26/10/2019
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-primary">Voir l'offre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <h3 class="heading-h3">Développeur Web</h3>
+                        <div class="d-flex">
+                            <p class="mr-3">
+                                <i class="fas fa-building"></i> Société Info
+                            </p>
+                            <p class="mr-3">
+                                <i class="fas fa-tag"></i> Informatique
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Bruxelles
+                            </p>
+                        </div>
+                        <div class="date-job">
+                            <p>
+                                <i class="fas fa-table"></i> Publié le 26/10/2019
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-primary">Voir l'offre</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="job-item">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <h3 class="heading-h3">Développeur Web</h3>
+                        <div class="d-flex">
+                            <p class="mr-3">
+                                <i class="fas fa-building"></i> Société Info
+                            </p>
+                            <p class="mr-3">
+                                <i class="fas fa-tag"></i> Informatique
+                            </p>
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i> Bruxelles
+                            </p>
+                        </div>
+                        <div class="date-job">
+                            <p>
+                                <i class="fas fa-table"></i> Publié le 26/10/2019
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-primary">Voir l'offre</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jumbotron jumbotron-fluid call-to-action-employee">
+        <div class="container">
+            <div class="content-call-to-action-employee">
+                <h2 class="mb-5">Vous êtes un employeur ? Ajouter un emploi et trouver le candidat idéal.<br>C'est gratuit !</h2>
+                <a href="#" class="btn btn-danger">Ajouter un emploi</a>
+            </div>
+        </div>
+    </section>
 {% endblock %}
