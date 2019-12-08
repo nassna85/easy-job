@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomePageController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block body %}
-    <section class="header-homepage overlay" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/09/09/22/workplace-1245776_960_720.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+    <section class="header-homepage overlay" style="background-image: url('/build/images/header-homepage.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
@@ -40,11 +40,7 @@
 
     <section class="section-categories-homepage">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-                    <h2 class="mb-5">Les catégories</h2>
-                </div>
-            </div>
+            <h2 class="text-center">Les catégories</h2>
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
                     <a href="#" class="h-100 feature-item">
@@ -123,9 +119,7 @@
 
     <section class="section-recent-job-homepage bg-light">
         <div class="container">
-            <div class="heading-h2">
-                <h2>Emplois récent</h2>
-            </div>
+            <h2 class="text-center">Emplois récent</h2>
             <div class="job-item">
                 <div class="row align-items-center">
                     <div class="col-md-9">
@@ -266,7 +260,7 @@
     <section class="jumbotron jumbotron-fluid call-to-action-employee">
         <div class="container">
             <div class="content-call-to-action-employee">
-                <h2 class="mb-5">Vous êtes un employeur ? Ajouter un emploi et trouver le candidat idéal.<br>C'est gratuit !</h2>
+                <h2 class="mb-5">Vous êtes un employeur ? <br>Ajouter un emploi et trouver le candidat idéal.<br>C'est gratuit !</h2>
                 <a href="#" class="btn btn-danger">Ajouter un emploi</a>
             </div>
         </div>

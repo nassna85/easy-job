@@ -7,6 +7,12 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+h2 {
+  font-size: $heading-h2-size;
+}
+h3 {
+  font-size: $heading-h3-size;
+}
 .btn {
   padding: 8px 25px;
   font-size: 15px;
@@ -133,18 +139,17 @@ nav.bg-navbar {
 
 .site-footer {
   padding: 4em 0;
-
   background: lighten($black, 5%);
   color: rgba($white, .5);
-
+  margin-top: 100px;
   .footer-heading {
     font-size: 20px;
-
   }
   a {
     color: rgba($white, .3);
     &:hover {
       color: $white;
+      text-decoration: none;
     }
   }
   ul {
