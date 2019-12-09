@@ -4,7 +4,8 @@
   padding: 30px;
   border-left: 3px solid $danger;
   border-bottom: 1px solid $gray-400;
-  margin-top: 3rem;
+  //margin-top: 3rem;
+  margin-bottom: 50px;
   -webkit-transition: transform .3s;
   -moz-transition: transform .3s;
   transition: transform .3s;
@@ -16,5 +17,8 @@
   }
   p {
     color: $secondary;
+  }
+  .heading-h3 {
+    margin-bottom: 20px;
   }
 }
