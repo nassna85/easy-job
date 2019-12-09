@@ -20,7 +20,7 @@ class HomePageController extends AbstractController
     {
         return $this->render('homepage/homepage.html.twig', [
             'lastJobs' => $repository->lastJobs(5),
-            'categories' => $categoryRepository->findAll()
+            'categories' => $categoryRepository->findAll(),
         ]);
     }
 }
