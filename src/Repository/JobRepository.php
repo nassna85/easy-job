@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Job;
+use App\Services\JobSearch\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -21,11 +22,51 @@ class JobRepository extends ServiceEntityRepository
 
     /**
      * Récupère les emplois en lien avec une recherche
+     * @param SearchData $search
      * @return Job[]
      */
-    public function findSearch(): array
+    public function findSearch(SearchData $search): array
     {
-        return $this->findAll();
+        $query = $this->createQueryBuilder('j');
+
+            //->orderBy('j.createdAt', 'ASC');
+
+        if(!empty($search->getCategories()))
+        {
+            $query = $query
+                ->select('c', 'j')
+                ->join('j.categories', 'c')
+                ->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $search->getCategories());
+        }
+        if(!empty($search->getQ()))
+        {
+            $query = $query
+                ->andWhere('j.title LIKE :q')
+                ->setParameter('q', "%{$search->getQ()}%");
+        }
+        if(!empty($search->getContracts()))
+        {
+            $query = $query
+                ->andWhere('j.contract LIKE :co')
+                ->setParameter('co', $search->getContracts());
+        }
+        if(!empty($search->getExperiences()))
+        {
+            $query = $query
+                ->andWhere('j.experience LIKE :e')
+                ->setParameter('e', $search->getExperiences());
+        }
+        if(!empty($search->getPlaces()))
+        {
+            $query = $query
+                ->andWhere('j.place LIKE :pl')
+                ->setParameter('pl', $search->getPlaces());
+        }
+        $query = $query
+            ->orderBy('j.createdAt', 'ASC');
+
+        return $query->getQuery()->getResult();
     }
 
     /**

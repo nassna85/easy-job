@@ -1,0 +1,10 @@
+@import "./variable.scss";
+
+.form-search-filter {
+  h3 {
+    color: $secondary;
+  }
+  .form-check-label {
+    margin-bottom: 5px;
+  }
+}

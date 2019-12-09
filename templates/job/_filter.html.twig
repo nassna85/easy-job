@@ -1,0 +1,21 @@
+<div class="form-search-filter">
+    {{ form_start(form) }}
+
+    {{ form_row(form.q) }}
+
+    <h3>Catégories</h3>
+    {{ form_row(form.categories) }}
+
+    <h3>Lieu</h3>
+    {{ form_row(form.places) }}
+
+    <h3>Type de contrat</h3>
+    {{ form_row(form.contracts) }}
+
+    <h3>Expériences</h3>
+    {{ form_row(form.experiences) }}
+
+    <button type="submit" class="btn btn-danger btn-block mb-5 mb-lg-0">Rechercher</button>
+
+    {{ form_end(form) }}
+</div>

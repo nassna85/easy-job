@@ -6,6 +6,7 @@
     {{ parent() }}
     {{ encore_entry_link_tags('css/card-job') }}
     {{ encore_entry_link_tags('css/jobs') }}
+    {{ encore_entry_link_tags('css/filter-form') }}
 {% endblock %}
 
 {% block body %}
@@ -21,12 +22,17 @@
             <h2 class="heading-h2">Trouver votre job par critères</h2>
             <div class="row">
                 <div class="col-lg-3">
-                    <p>Ici sera le formulaire de critère de recherche</p>
+                    {% include 'job/_filter.html.twig' with {form:form} %}
                 </div>
                 <div class="col-lg-9">
-                    {% for job in jobs %}
-                        {% include 'job/_card-job.html.twig' with {job:job} only %}
-                    {% endfor %}
+                    {% if findJobNumber == 0 %}
+                        <h3 class="text-danger">Aucun résultat trouvé !</h3>
+                    {% else %}
+
+                        {% for job in jobs %}
+                            {% include 'job/_card-job.html.twig' with {job:job} only %}
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
