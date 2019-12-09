@@ -19,9 +19,27 @@ class JobRepository extends ServiceEntityRepository
         parent::__construct($registry, Job::class);
     }
 
-    public function findSearch()
+    /**
+     * Récupère les emplois en lien avec une recherche
+     * @return Job[]
+     */
+    public function findSearch(): array
     {
         return $this->findAll();
+    }
+
+    /**
+     * @param int $limit
+     * @return Job[]
+     */
+    public function lastJobs(int $limit): array
+    {
+        return $this-> createQueryBuilder('j')
+            ->orderBy('j.createdAt', 'ASC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+         ;
     }
 
     // /**
