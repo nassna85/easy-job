@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ job.title }} - {{ job.id }}{% endblock %}
+
+{% block body %}
+    <div style="margin-top: 100px">
+        <p>{{ job.title }}</p>
+    </div>
+{% endblock %}

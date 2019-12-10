@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -106,11 +107,27 @@ class Job
     private $categories;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
      * @ORM\PrePersist()
      */
     public function initialiseCreatedAt()
     {
         $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     * @return string
+     */
+    public function toSlug()
+    {
+        $slugify = new Slugify();
+        $this->slug = $slugify->slugify($this->title);
     }
 
     public function getId(): ?int
@@ -234,6 +251,18 @@ class Job
     public function setCategories(?Category $categories): self
     {
         $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

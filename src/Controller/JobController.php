@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Job;
 use App\Form\SearchJobType;
 use App\Repository\JobRepository;
 use App\Services\JobSearch\SearchData;
@@ -31,6 +32,18 @@ class JobController extends AbstractController
             'jobs' => $jobs,
             'form' => $form->createView(),
             'findJobNumber' => $findJobsNumber
+        ]);
+    }
+
+    /**
+     * @Route("/emplois/{slug}/{id}", name="job_show")
+     * @param Job $job
+     * @return Response
+     */
+    public function show(Job $job)
+    {
+        return $this->render('job/show.html.twig', [
+            'job' => $job
         ]);
     }
 }
