@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Job;
 use App\Form\SearchJobType;
 use App\Repository\JobRepository;
@@ -44,6 +45,20 @@ class JobController extends AbstractController
     {
         return $this->render('job/show.html.twig', [
             'job' => $job
+        ]);
+    }
+
+    /**
+     * @Route("/categorie/{slug}", name="job_category")
+     * @param Category $category
+     * @return Response
+     */
+    public function showCategory(Category $category)
+    {
+        $jobsByCategories = $category->getJobs();
+
+        return $this->render('job/showCategory.html.twig', [
+            'jobsByCategories' => $jobsByCategories
         ]);
     }
 }
