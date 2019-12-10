@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
         {
             $job = new Job();
             $job->setTitle($faker->sentence(4))
-                ->setDescription($faker->paragraph(6))
+                ->setDescription($faker->paragraph(20))
                 ->setContactPerson($faker->name())
                 ->setContract($faker->randomElement($contracts))
                 ->setEmailContact($faker->email)

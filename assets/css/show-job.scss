@@ -1,0 +1,55 @@
+@import "./variable.scss";
+
+section.header-show-job {
+  margin-top: 81px;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/07/10/business-1868015_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  h1 {
+    color: $white;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 60px;
+  }
+}
+section.details-job {
+  margin: 100px 0;
+  h2 {
+    margin-bottom: 20px;
+  }
+  p {
+    margin-right: 10px;
+    color: $secondary;
+    i {
+      margin-right: 5px;
+      color: $primary;
+    }
+  }
+  h3 {
+    margin-top: 50px;
+    color: $primary;
+  }
+  .bg-sommary {
+    margin-top: 30px;
+    .list-sommary {
+      font-weight: 500;
+    }
+    h3 {
+      margin-top: 20px;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 500px) {
+    section.header-show-job {
+      padding: 80px 0;
+      h1 {
+        font-size: 2rem;
+        padding: 20px;
+      }
+    }
+}

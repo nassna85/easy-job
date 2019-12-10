@@ -2,8 +2,84 @@
 
 {% block title %}{{ job.title }} - {{ job.id }}{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/show-job') }}
+{% endblock %}
+
 {% block body %}
-    <div style="margin-top: 100px">
-        <p>{{ job.title }}</p>
-    </div>
+    <section class="jumbotron jumbotron-fluid header-show-job">
+        <div class="container">
+            <h1>{{ job.title }}</h1>
+        </div>
+    </section>
+
+    <section class="details-job">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 order-1 order-lg-0">
+                    <h2 class="mt-5 mt-lg-0">{{ job.title }}</h2>
+                    <div class="d-flex">
+                        <p>
+                            <i class="fas fa-building"></i> {{ job.enterprise }}
+                        </p>
+                        <p>
+                            <i class="fas fa-tag"></i> {{ job.categories }}
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> {{ job.place }}
+                        </p>
+                    </div>
+                    <h3>Description</h3>
+                    <p>
+                        {{ job.description | nl2br }}
+                    </p>
+                    <h3>Comment postuler ?</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <span class="font-weight-bold">Soit par email:</span><br>Il vous suffit d'envoyer un email à la personne de contact en y joignant votre CV et lettre de motivation et en n'oubliant pas de <strong>mentionner la référence de l'offre !</strong>
+                        </li>
+                        <li>
+                            <span class="font-weight-bold">Soit directement sur le site:</span><br>Il vous suffit de cliquer sur le bouton postuler
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 order-0 order-lg-1">
+                    <div class="d-flex">
+                        <button class="btn btn-primary mr-3"><i class="far fa-heart"></i> Enregistrer</button>
+                        <button class="btn btn-danger">Postuler</button>
+                    </div>
+                    <div class="bg-light p-3 border rounded bg-sommary">
+                        <h3 class="pl-3 text-primary">Informations</h3>
+                        <ul class="list-unstyled pl-3">
+                            <li class="mb-2">
+                                <span class="list-sommary">Numéro de référence:</span> {{ job.id }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Publiée le:</span> {{ job.createdAt | date('d/m/Y') }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Type de contrat:</span> {{ job.contract }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Expérience:</span> {{ job.experience }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Entreprise:</span> {{ job.enterprise }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Lieu:</span> {{ job.place }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Personne de contact:</span> {{ job.contactPerson }}
+                            </li>
+                            <li class="mb-2">
+                                <span class="list-sommary">Email de contact:</span> {{ job.emailContact }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

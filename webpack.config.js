@@ -33,6 +33,7 @@ Encore
     .addStyleEntry('css/card-job', './assets/css/card-job.scss')
     .addStyleEntry('css/jobs', './assets/css/jobs.scss')
     .addStyleEntry('css/filter-form', './assets/css/filter-form.scss')
+    .addStyleEntry('css/show-job', './assets/css/show-job.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
