@@ -42,8 +42,10 @@
   }
   h1 {
     font-weight: 700;
-    color: rgba($white, .8);
+    color: $white;
     font-size: $font-size-base + 1rem;
+    background-color: rgba($black, .4);
+    padding: 30px;
     strong {
       font-weight: 900;
     }

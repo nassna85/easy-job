@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +174,7 @@
       <workItem from="1575745917776" duration="18434000" />
       <workItem from="1575825868784" duration="11755000" />
       <workItem from="1575904284769" duration="16662000" />
-      <workItem from="1575987936675" duration="7693000" />
+      <workItem from="1575987936675" duration="8067000" />
     </task>
     <servers />
   </component>
