@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -87,6 +89,16 @@ class User implements UserInterface
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Job", mappedBy="author", orphanRemoval=true)
+     */
+    private $jobs;
+
+    public function __construct()
+    {
+        $this->jobs = new ArrayCollection();
+    }
 
     /**
      * @ORM\PrePersist()
@@ -229,5 +241,36 @@ class User implements UserInterface
     public function setPasswordConfirm($passwordConfirm)
     {
         $this->passwordConfirm = $passwordConfirm;
+    }
+
+    /**
+     * @return Collection|Job[]
+     */
+    public function getJobs(): Collection
+    {
+        return $this->jobs;
+    }
+
+    public function addJob(Job $job): self
+    {
+        if (!$this->jobs->contains($job)) {
+            $this->jobs[] = $job;
+            $job->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJob(Job $job): self
+    {
+        if ($this->jobs->contains($job)) {
+            $this->jobs->removeElement($job);
+            // set the owning side to null (unless already changed)
+            if ($job->getAuthor() === $this) {
+                $job->setAuthor(null);
+            }
+        }
+
+        return $this;
     }
 }
