@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription d'un nouvel utilisateur{% endblock %}
+
+{% block body %}
+    <section class="user-registration-form" style="margin-top: 100px;">
+        <div class="container">
+            {{ form_start(form) }}
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.type) }}
+            {{ form_row(form.password) }}
+            {{ form_row(form.passwordConfirm) }}
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <button class="btn btn-danger" type="submit">S'inscrire</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
