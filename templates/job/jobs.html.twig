@@ -28,7 +28,6 @@
                     {% if findJobNumber == 0 %}
                         <h3 class="text-danger">Aucun résultat trouvé !</h3>
                     {% else %}
-
                         {% for job in jobs %}
                             {% include 'job/_card-job.html.twig' with {job:job} only %}
                         {% endfor %}

@@ -37,19 +37,7 @@ class JobController extends AbstractController
     }
 
     /**
-     * @Route("/emplois/{slug}/{id}", name="job_show")
-     * @param Job $job
-     * @return Response
-     */
-    public function show(Job $job)
-    {
-        return $this->render('job/show.html.twig', [
-            'job' => $job
-        ]);
-    }
-
-    /**
-     * @Route("/categorie/{slug}", name="job_category")
+     * @Route("/emplois/categorie/{slug}", name="job_category")
      * @param Category $category
      * @return Response
      */
@@ -58,7 +46,20 @@ class JobController extends AbstractController
         $jobsByCategories = $category->getJobs();
 
         return $this->render('job/showCategory.html.twig', [
-            'jobsByCategories' => $jobsByCategories
+            'jobsByCategories' => $jobsByCategories,
+            'currentCategory' => $category
+        ]);
+    }
+
+    /**
+     * @Route("/emplois/{slug}/{id}", name="job_show")
+     * @param Job $job
+     * @return Response
+     */
+    public function show(Job $job)
+    {
+        return $this->render('job/show.html.twig', [
+            'job' => $job
         ]);
     }
 }

@@ -2,17 +2,40 @@
 
 {% block stylesheets %}
     {{ parent() }}
+    {{ encore_entry_link_tags('css/job-by-category') }}
     {{ encore_entry_link_tags('css/card-job') }}
 {% endblock %}
 
 {% block title %}Recherche par catégorie{% endblock %}
 
 {% block body %}
-    <div style="margin-top: 100px">
+    <section class="jumbotron jumbotron-fluid header-job-by-category">
         <div class="container">
-            {% for jobByCategory in jobsByCategories %}
-                {% include 'job/_card-job.html.twig' with {job:jobByCategory} %}
-            {% endfor %}
+            <div class="row align-items-center text-center text-md-left">
+                <div class="col-md-6">
+                    <h1>{{ currentCategory }}</h1>
+                    <a href="{{ path('job_index') }}" class="btn btn-danger">Rechercher par critère</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ asset('/build/images/header-job-by-category.svg') }}" alt="" class="img-fluid">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+    <section class="list-job-by-category">
+        <div class="container">
+            <p class="intro-list-job-by-category">
+                Retrouver toutes les offres d'emplois correspondant à la catégorie <strong>{{ currentCategory }}</strong>.
+            </p>
+            {% if jobsByCategories | length > 0 %}
+                {% for jobByCategory in jobsByCategories %}
+                    {% include 'job/_card-job.html.twig' with {job:jobByCategory} %}
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info">
+                    Aucune offre d'emploi correspond à ce critère n'a été trouvée !
+                </div>
+            {% endif %}
+        </div>
+    </section>
 {% endblock %}

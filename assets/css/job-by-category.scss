@@ -1,0 +1,36 @@
+@import "./variable.scss";
+
+section.header-job-by-category {
+  margin-top: 81px;
+  margin-bottom: 0;
+  h1 {
+    color: $primary;
+    margin-bottom: 20px;
+  }
+}
+
+section.list-job-by-category {
+  padding: 100px 0;
+  background-color: #fcfcfc;
+  p.intro-list-job-by-category {
+    font-size: 20px;
+    color: $secondary;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 500px) {
+  section.header-job-by-category {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  section.list-job-by-category {
+    p.intro-list-job-by-category {
+      font-size: 18px;
+    }
+  }
+}
