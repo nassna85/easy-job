@@ -95,9 +95,20 @@ class User implements UserInterface
      */
     private $jobs;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\TokenUserRegistration", mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $tokenUserRegistration;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
+
     public function __construct()
     {
         $this->jobs = new ArrayCollection();
+        $this->active = false;
     }
 
     /**
@@ -270,6 +281,35 @@ class User implements UserInterface
                 $job->setAuthor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTokenUserRegistration(): ?TokenUserRegistration
+    {
+        return $this->tokenUserRegistration;
+    }
+
+    public function setTokenUserRegistration(TokenUserRegistration $tokenUserRegistration): self
+    {
+        $this->tokenUserRegistration = $tokenUserRegistration;
+
+        // set the owning side of the relation if necessary
+        if ($tokenUserRegistration->getUser() !== $this) {
+            $tokenUserRegistration->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

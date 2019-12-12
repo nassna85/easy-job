@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/job-find.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/job-find.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +140,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UenxVqBkNKBjKtq7DKHi7Xce7V" />
@@ -177,7 +187,8 @@
       <workItem from="1575825868784" duration="11755000" />
       <workItem from="1575904284769" duration="16662000" />
       <workItem from="1575987936675" duration="8120000" />
-      <workItem from="1576082679528" duration="9910000" />
+      <workItem from="1576082679528" duration="10184000" />
+      <workItem from="1576165012245" duration="7418000" />
     </task>
     <servers />
   </component>
@@ -189,18 +200,18 @@
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="992" y="226" key="IDE.errors.dialog/0.23.1920.970@0.23.1920.970" timestamp="1575910821488" />
-    <state x="607" y="363" key="NewPhpClassDialog" timestamp="1575910168270">
+    <state x="607" y="363" key="NewPhpClassDialog" timestamp="1576166210094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="607" y="363" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1575910168270" />
+    <state x="607" y="363" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576166210094" />
     <state x="930" y="144" key="SettingsEditor" timestamp="1575726192167">
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="930" y="144" key="SettingsEditor/0.23.1920.970@0.23.1920.970" timestamp="1575726192167" />
-    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576082690814">
+    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576165139020">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576082690814" />
+    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576165139020" />
     <state x="1114" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.973@0.23.1920.973" timestamp="1575825870031" />
     <state x="1069" y="235" width="670" height="679" key="search.everywhere.popup" timestamp="1575765169140">
       <screen x="0" y="23" width="1920" height="973" />

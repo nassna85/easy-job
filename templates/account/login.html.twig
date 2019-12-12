@@ -3,6 +3,27 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
+    {# MESSAGE IF VALIDATION TOKEN #}
+    {% if app.request.query.get('tokenValid') %}
+
+        <div class="container" style="margin-top: 100px;">
+            <div class="alert alert-success">
+                Votre compte a bien été confirmé. Vous pouvez désormais vous connecter.
+            </div>
+        </div>
+
+    {% endif %}
+
+    {% if app.request.query.get('tokenAlreadyValidate') %}
+
+        <div class="container" style="margin-top: 100px;">
+            <div class="alert alert-info">
+                Vous avez déjà validé votre token. Vous pouvez vous connecter.
+            </div>
+        </div>
+
+    {% endif %}
+
     <section class="login-form" style="margin-top: 100px;">
         <div class="container">
             <form method="post">
