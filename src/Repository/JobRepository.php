@@ -31,6 +31,7 @@ class JobRepository extends ServiceEntityRepository
 
             //->orderBy('j.createdAt', 'ASC');
 
+        //ON UTILISE IN CAR C'EST UN TABLEAU DE REPONSE DONC ON UTILISE IN PUIS PARENTHèSE
         if(!empty($search->getCategories()))
         {
             $query = $query
@@ -48,19 +49,19 @@ class JobRepository extends ServiceEntityRepository
         if(!empty($search->getContracts()))
         {
             $query = $query
-                ->andWhere('j.contract LIKE :co')
+                ->andWhere('j.contract IN (:co)')
                 ->setParameter('co', $search->getContracts());
         }
         if(!empty($search->getExperiences()))
         {
             $query = $query
-                ->andWhere('j.experience LIKE :e')
+                ->andWhere('j.experience IN (:e)')
                 ->setParameter('e', $search->getExperiences());
         }
         if(!empty($search->getPlaces()))
         {
             $query = $query
-                ->andWhere('j.place LIKE :pl')
+                ->andWhere('j.place IN (:pl)')
                 ->setParameter('pl', $search->getPlaces());
         }
         $query = $query
