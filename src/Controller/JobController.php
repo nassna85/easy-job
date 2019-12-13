@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Job;
+use App\Form\JobNewType;
 use App\Form\SearchJobType;
 use App\Repository\JobRepository;
 use App\Services\JobSearch\SearchData;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -69,6 +72,43 @@ class JobController extends AbstractController
     {
         return $this->render('job/show.html.twig', [
             'job' => $job
+        ]);
+    }
+
+    /**
+     * @Route("/emplois/nouveau", name="job_new")
+     * @IsGranted("ROLE_USER")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
+    public function new(Request $request, EntityManagerInterface $manager)
+    {
+        $user = $this->getUser();
+
+        $job = new Job();
+        $form = $this->createForm(JobNewType::class, $job);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $job->setAuthor($user);
+            $manager->persist($job);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                "Votre nouvel emploi a bien été créé. Nous vous remerçions pour votre confiance !"
+            );
+            return $this->redirectToRoute('job_show', [
+                'id' => $job->getId(),
+                'slug' => $job->getSlug()
+            ]);
+        }
+
+        return $this->render('job/new.html.twig', [
+            'form' => $form->createView(),
+            'user' => $user
         ]);
     }
 }

@@ -37,6 +37,7 @@ Encore
     .addStyleEntry('css/job-by-category', './assets/css/job-by-category.scss')
     .addStyleEntry('css/login-form', './assets/css/login-form.scss')
     .addStyleEntry('css/registration-user-form', './assets/css/registration-user-form.scss')
+    .addStyleEntry('css/new-job', './assets/css/new-job.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

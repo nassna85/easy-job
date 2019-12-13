@@ -152,3 +152,12 @@ section.jumbotron-fluid.call-to-action-employee {
     color: $white;
   }
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 500px) {
+  .header-homepage {
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+}
