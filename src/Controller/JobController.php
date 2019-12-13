@@ -23,6 +23,15 @@ class JobController extends AbstractController
     public function index(JobRepository $repository, Request $request)
     {
         $data = new SearchData();
+        //For knp paginator, get page
+        $data->setPage((int) $request->get('page', 1));
+
+        //Test si nombre entier en parametre de page ou autre chose
+        if($data->getPage() === 0)
+        {
+            $data->setPage(1);
+        }
+
         $form = $this->createForm(SearchJobType::class, $data);
         $form->handleRequest($request);
 

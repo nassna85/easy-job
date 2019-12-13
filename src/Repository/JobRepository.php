@@ -6,6 +6,8 @@ use App\Entity\Job;
 use App\Services\JobSearch\SearchData;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method Job|null find($id, $lockMode = null, $lockVersion = null)
@@ -15,17 +17,23 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  */
 class JobRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Job::class);
+        $this->paginator = $paginator;
     }
 
     /**
      * Récupère les emplois en lien avec une recherche
      * @param SearchData $search
-     * @return Job[]
+     * @return PaginationInterface
      */
-    public function findSearch(SearchData $search): array
+    public function findSearch(SearchData $search): PaginationInterface
     {
         $query = $this->createQueryBuilder('j');
 
@@ -67,7 +75,12 @@ class JobRepository extends ServiceEntityRepository
         $query = $query
             ->orderBy('j.createdAt', 'ASC');
 
-        return $query->getQuery()->getResult();
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $search->getPage(),
+            6
+        );
     }
 
     /**

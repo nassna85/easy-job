@@ -9,6 +9,11 @@ use App\Entity\Category;
 class SearchData
 {
     /**
+     * @ int
+     */
+    private $page = 1;
+
+    /**
      * @var string
      */
     private $q;
@@ -85,6 +90,24 @@ class SearchData
     public function setExperiences($experiences)
     {
         $this->experiences = $experiences;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPage(): int
+    {
+        return $this->page;
+    }
+
+    /**
+     * @param int $page
+     * @return SearchData
+     */
+    public function setPage(int $page): SearchData
+    {
+        $this->page = $page;
         return $this;
     }
 
