@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/jobs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/jobs.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/variable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/variable.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/homepage/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/job/jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/jobs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +182,7 @@
       <workItem from="1575987936675" duration="8120000" />
       <workItem from="1576082679528" duration="10184000" />
       <workItem from="1576165012245" duration="11801000" />
-      <workItem from="1576250224053" duration="13260000" />
+      <workItem from="1576250224053" duration="14679000" />
     </task>
     <servers />
   </component>

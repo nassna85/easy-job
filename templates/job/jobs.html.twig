@@ -31,7 +31,9 @@
                         {% for job in jobs %}
                             {% include 'job/_card-job.html.twig' with {job:job} only %}
                         {% endfor %}
+                        <div class="pagination-sm">
                             {{ knp_pagination_render(jobs) }}
+                        </div>
                     {% endif %}
                 </div>
             </div>
