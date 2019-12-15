@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/profile-user') }}
+{% endblock %}
+
+{% block title %}Profil de {{ user.firstName }} {{ user.lastName }}{% endblock %}
+
+{% block body %}
+
+    {% if is_granted('ROLE_USER') %}
+        <section class="jumbotron jumbotron-fluid header-profile-user">
+            <div class="container content-header-profile">
+                <h1>Bienvenue {{ user.fullName }}</h1>
+                <span class="badge badge-danger my-4">
+                    {{ user.type }}
+                </span>
+                <p class="mb-4">Inscrit depuis le {{ user.createdAt | date('d/m/Y') }}</p>
+                <a href="#" class="btn btn-primary mb-2 mb-sm-0"><i class="fas fa-pen"></i> Modifier mon profil</a>
+                <a href="#" class="btn btn-success"><i class="fas fa-unlock-alt"></i> Modifier mon mot de passe</a>
+            </div>
+        </section>
+
+        <section class="content-profile-user">
+            <div class="container">
+                {% if user.type == "Employeur" %}
+                    <h1>Liste de vos offres d'emplois</h1>
+                    <table class="table table-hover table-responsive">
+                        <thead>
+                        <tr>
+                            <th scope="col">Référence</th>
+                            <th scope="col">Publié le</th>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Entreprise</th>
+                            <th scope="col">Lieu</th>
+                            <th scope="col">Expérience</th>
+                            <th scope="col">Contrat</th>
+                            <th scope="col">Personne de contact</th>
+                            <th scope="col">Email de contact</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if countJobs | length > 0 %}
+                            {% for job in jobs %}
+                                <tr>
+                                    <td>{{ job.id }}</td>
+                                    <td>{{ job.createdAt | date('d/m/Y') }}</td>
+                                    <td>{{ job.title }}</td>
+                                    <td>{{ job.description | slice(0, 40) }}...</td>
+                                    <td>{{ job.enterprise }}</td>
+                                    <td>{{ job.place }}</td>
+                                    <td>{{ job.experience }}</td>
+                                    <td>{{ job.contract }}</td>
+                                    <td>{{ job.contactPerson }}</td>
+                                    <td>{{ job.emailContact }}</td>
+                                    <td class="d-flex">
+                                        <a href="#" class="btn btn-sm btn-primary mr-2">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-sm btn-success mr-2">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-sm btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <h2>Actuellement, vous n'avez aucun emploi</h2>
+                        {% endif %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <h1>Liste de vos candidatures</h1>
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+{% endblock %}

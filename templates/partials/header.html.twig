@@ -26,11 +26,11 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ app.user.firstName }} {{ app.user.lastName }}
+                        {{ app.user.fullName }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownUser">
                         <i class="fas fa-sort-up"></i>
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="{{ path('account_profile') }}">Profil</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ path('account_logout') }}">Se Déconnecter</a>

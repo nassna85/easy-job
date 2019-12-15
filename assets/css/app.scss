@@ -55,6 +55,9 @@ h3 {
     }
   }
 }
+.btn-sm {
+  padding: 5px 8px;
+}
 
 .text-primary {
   color: $primary !important;
@@ -67,6 +70,12 @@ h3 {
 }
 .border-danger {
   border-color: $danger !important;
+}
+.badge {
+  padding: 6px 8px;
+}
+.badge.badge-danger {
+  background-color: $danger;
 }
 .form-control {
   height: $height-form-control;

@@ -114,9 +114,17 @@ class User implements UserInterface
     /**
      * @ORM\PrePersist()
      */
-    public function initialiseCreatedAt()
+    public function initializeCreatedAt()
     {
         $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * @return string
+     */
+    public function fullName()
+    {
+        return $this->firstName . " " . $this->lastName;
     }
 
     public function getId(): ?int
