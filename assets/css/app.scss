@@ -110,7 +110,7 @@ nav.bg-navbar {
   i {
     line-height: 1.5;
   }
-  .nav-item .nav-link {
+  .nav-item .nav-link, .dropdown-item {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -120,6 +120,7 @@ nav.bg-navbar {
     transition: .3s ease-in-out;
     &:hover {
       color: #c6c6c6;
+      background-color: transparent;
     }
   }
   .btn.btn-danger {
@@ -142,6 +143,20 @@ nav.bg-navbar {
       outline: none;
       box-shadow: none;
     }
+  }
+  .dropdown-menu {
+    background-color: $primary;
+    margin-top: 0;
+    position: relative;
+    .fa-sort-up {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      color: $white;
+    }
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }
 }
 

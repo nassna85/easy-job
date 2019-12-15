@@ -21,15 +21,24 @@
             </div>
         </div>
     </section>
-    <section class="new-job-form">
-        <div class="container">
-            <h1 class="h3 mb-5">Créer un nouvel emploi</h1>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <div class="form-group">
-                <button type="submit" class="btn btn-danger">Créer un nouvel emploi</button>
+    {% if app.user.type == "Employeur" %}
+        <section class="new-job-form">
+            <div class="container">
+                <h1 class="h3 mb-5">Créer un nouvel emploi</h1>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger">Créer un nouvel emploi</button>
+                </div>
+                {{ form_end(form) }}
             </div>
-            {{ form_end(form) }}
+        </section>
+    {% else %}
+        <div class="container">
+            <div class="alert alert-danger">
+                Désolé mais vous n'avez pas accès à ce service en tant que <em>{{ app.user.type }}</em>. Seul les employeurs peuvent créer des emplois !<br>
+                Vous devriez pluôt être à la recherche d'un emploi. Si tel est le cas, vous pouvez <a href="{{ path('job_index') }}">rechercher un emploi</a>.
+            </div>
         </div>
-    </section>
+    {% endif %}
 {% endblock %}
