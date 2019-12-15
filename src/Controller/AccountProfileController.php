@@ -2,9 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Job;
+use App\Form\JobNewType;
 use App\Repository\JobRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,11 +26,63 @@ class AccountProfileController extends AbstractController
     {
         $user = $this->getUser();
         $jobByAuthor = $repository->findBy(["author" => $user]);
+        $countJobs = count($jobByAuthor);
 
         return $this->render('account_profile/profile.html.twig', [
             'user' => $user,
             'jobs' => $jobByAuthor,
-            'countJobs' => count($jobByAuthor)
+            'countJobs' => $countJobs
         ]);
+    }
+
+    /**
+     * @Route("/profil/{slug}/{id}/editer", name="account_profile_editJob")
+     * @Security("is_granted('ROLE_USER') and user === job.getAuthor()")
+     * @param Job $job
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
+    public function editJob(Job $job, Request $request, EntityManagerInterface $manager)
+    {
+        $form = $this->createForm(JobNewType::class, $job);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $manager->persist($job);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                "{$job->getAuthor()->getFirstName()}, votre emploi a bien été modifié."
+            );
+            return $this->redirectToRoute('account_profile');
+        }
+
+        return $this->render('account_profile/editJob.html.twig', [
+            'job' => $job,
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/profil/{slug}/{id}/supprimer", name="account_profile_deleteJob")
+     * @Security("is_granted('ROLE_USER') and user === job.getAuthor()")
+     * @param Job $job
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse
+     */
+    public function deleteJob(Job $job, EntityManagerInterface $manager)
+    {
+        $manager->remove($job);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            "L'offre d'emploi a bien été supprimé."
+        );
+
+        return $this->redirectToRoute('account_profile');
     }
 }

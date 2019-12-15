@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/profile-user') }}
+    {{ encore_entry_link_tags('css/new-job') }}
+{% endblock %}
+
+{% block title %}{{ job.title }} | {{ job.id }}{% endblock %}
+
+{% block body %}
+    <section class="jumbotron jumbotron-fluid header-edit-job">
+        <div class="container">
+            <h1>
+                {{ job.author.firstName }}, souhaitez-vous modifier l'emploi<br>
+                <span class="title-edit-job">"{{ job.title }}"</span> ?
+            </h1>
+        </div>
+    </section>
+
+    {% include 'job/_form-job.html.twig' with {title:"Modifier votre emploi"} %}
+{% endblock %}

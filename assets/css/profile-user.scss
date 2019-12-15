@@ -20,7 +20,6 @@ section.content-profile-user {
   h1 {
     color: $secondary;
     font-weight: 500;
-    margin-bottom: 50px;
   }
   th {
     font-size: 12px;
@@ -31,6 +30,17 @@ section.content-profile-user {
   }
   td {
     font-size: 12px;
+  }
+}
+
+section.header-edit-job {
+  margin-top: 81px;
+  h1 {
+    font-weight: 500;
+    color: $secondary;
+    .title-edit-job {
+      color: $primary;
+    }
   }
 }
 
