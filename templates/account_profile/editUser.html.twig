@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/profile-user') }}
+{% endblock %}
+
+{% block title %}Modification du profil de {{ user.fullName }}{% endblock %}
+
+{% block body %}
+
+    <section class="edit-user-form">
+        <div class="container">
+            <h2>Modifier mon profil</h2>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </section>
+
+{% endblock %}

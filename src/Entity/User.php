@@ -38,12 +38,13 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Veuillez indiquer un mot de passe !")
+     * @Assert\NotBlank(message="Veuillez indiquer un mot de passe !", groups={"registration"})
      * @Assert\Length(
      *     min="6",
      *     minMessage="Votre mot de passe doit contenir au minimum 6 caractères !",
      *     max="12",
-     *     maxMessage="Votre mot de passe doit contenir au maximum 12 caractères !"
+     *     maxMessage="Votre mot de passe doit contenir au maximum 12 caractères !",
+     *     groups={"registration"}
      * )
      */
     private $password;

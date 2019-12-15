@@ -1,5 +1,6 @@
 @import "./variable.scss";
 
+/* PAGE PROFILE USER */
 section.header-profile-user {
   margin-top: 81px;
   .content-header-profile {
@@ -33,6 +34,7 @@ section.content-profile-user {
   }
 }
 
+/* PAGE PROFILE EDITION JOB */
 section.header-edit-job {
   margin-top: 81px;
   h1 {
@@ -41,6 +43,33 @@ section.header-edit-job {
     .title-edit-job {
       color: $primary;
     }
+  }
+}
+
+/* PAGE PROFILE EDITION USER */
+section.header-edit-user {
+  margin-top: 81px;
+}
+
+section.edit-user-form {
+  max-width: 600px;
+  margin: 200px auto;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  padding: 30px;
+  .form-control {
+    height: 50px;
+    &:focus {
+      border-color: $primary;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  h2 {
+    font-weight: 500;
+    color: $primary;
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -56,6 +85,11 @@ section.header-edit-job {
     h1 {
       font-size: $font-size-base + .6rem;
     }
+  }
+  section.edit-user-form {
+    border: none;
+    margin: 120px auto;
+    padding: 0;
   }
 
 }

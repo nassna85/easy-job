@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Job;
 use App\Form\JobNewType;
+use App\Form\UserProfileEditType;
 use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -32,6 +33,37 @@ class AccountProfileController extends AbstractController
             'user' => $user,
             'jobs' => $jobByAuthor,
             'countJobs' => $countJobs
+        ]);
+    }
+
+    /**
+     * @Route("/profil/modification", name="account_profile_editUser")
+     * @IsGranted("ROLE_USER")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
+    public function editUser(Request $request, EntityManagerInterface $manager)
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(UserProfileEditType::class, $user);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $manager->persist($user);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                "Votre profil a bien été modifié"
+            );
+            return $this->redirectToRoute('account_profile');
+        }
+
+        return $this->render('account_profile/editUser.html.twig', [
+            'user' => $user,
+            'form' => $form->createView()
         ]);
     }
 
