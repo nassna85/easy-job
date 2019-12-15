@@ -3,17 +3,21 @@
 namespace App\Controller;
 
 use App\Entity\Job;
+use App\Entity\PasswordEdit;
 use App\Form\JobNewType;
+use App\Form\PasswordEditType;
 use App\Form\UserProfileEditType;
 use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AccountProfileController extends AbstractController
 {
@@ -64,6 +68,50 @@ class AccountProfileController extends AbstractController
         return $this->render('account_profile/editUser.html.twig', [
             'user' => $user,
             'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/profil/mot-de-passe/modification", name="account_profile_editUserPassword")
+     * @IsGranted("ROLE_USER")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @return Response
+     */
+    public function editUserPassword(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    {
+        $user = $this->getUser();
+        $editPassword = new PasswordEdit();
+        $form = $this->createForm(PasswordEditType::class, $editPassword);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            if(!password_verify($editPassword->getOldPassword(), $user->getPassword()))
+            {
+                $form->get('oldPassword')->addError(new FormError("Le mot de passe ne correspond pas à votre mot de passe actuel !"));
+            }
+            else
+            {
+                $newPassword = $editPassword->getNewPassword();
+                $hash = $encoder->encodePassword($user, $newPassword);
+                $user->setPassword($hash);
+                $manager->persist($user);
+                $manager->flush();
+
+                $this->addFlash(
+                    'success',
+                    "Votre mot de passe a bien été modifié."
+                );
+                return $this->redirectToRoute('account_profile');
+            }
+        }
+
+
+        return $this->render('account_profile/editUserPassword.html.twig', [
+            'form' => $form->createView(),
+            'user' => $user
         ]);
     }
 
