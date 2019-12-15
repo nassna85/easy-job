@@ -31,7 +31,10 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownUser">
                         <i class="fas fa-sort-up"></i>
                         <a class="dropdown-item" href="{{ path('account_profile') }}">Profil</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="{{ path('account_profile_editUserPassword') }}">Sécurité</a>
+                        {% if app.user.type == "Employeur" %}
+                            <a class="dropdown-item" href="{{ path('job_new') }}">Ajouter un emploi</a>
+                        {% endif %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ path('account_logout') }}">Se Déconnecter</a>
                     </div>
