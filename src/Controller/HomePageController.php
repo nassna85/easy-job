@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use App\Repository\JobRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,9 +18,11 @@ class HomePageController extends AbstractController
      */
     public function index(JobRepository $repository, CategoryRepository $categoryRepository)
     {
+        $categories = $categoryRepository->findAll();
+
         return $this->render('homepage/homepage.html.twig', [
             'lastJobs' => $repository->lastJobs(5),
-            'categories' => $categoryRepository->findAll(),
+            'categories' => $categories,
         ]);
     }
 }

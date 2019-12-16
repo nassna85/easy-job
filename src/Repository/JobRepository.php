@@ -85,12 +85,12 @@ class JobRepository extends ServiceEntityRepository
 
     /**
      * @param int $limit
-     * @return Job[]
+     * @return Job[]|null
      */
     public function lastJobs(int $limit): array
     {
         return $this-> createQueryBuilder('j')
-            ->orderBy('j.createdAt', 'ASC')
+            ->orderBy('j.createdAt', 'DESC')
             ->setMaxResults($limit)
             ->getQuery()
             ->getResult()
