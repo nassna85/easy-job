@@ -7,6 +7,7 @@ use App\Entity\PasswordEdit;
 use App\Form\JobNewType;
 use App\Form\PasswordEditType;
 use App\Form\UserProfileEditType;
+use App\Repository\ApplyRepository;
 use App\Repository\JobRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -25,18 +26,27 @@ class AccountProfileController extends AbstractController
      * @Route("/profil", name="account_profile")
      * @IsGranted("ROLE_USER")
      * @param JobRepository $repository
+     * @param ApplyRepository $applyRepository
      * @return Response
      */
-    public function profile(JobRepository $repository)
+    public function profile(JobRepository $repository, ApplyRepository $applyRepository)
     {
         $user = $this->getUser();
         $jobByAuthor = $repository->findBy(["author" => $user]);
+        $appliesByUser = $applyRepository->findBy(['user' => $user]);
+        $appliesForEmployee = $applyRepository->findBy(['job' => $jobByAuthor]);
         $countJobs = count($jobByAuthor);
+        $countAppliesByUser = count($appliesByUser);
+        $countAppliesForEmployee = count($appliesForEmployee);
 
         return $this->render('account_profile/profile.html.twig', [
             'user' => $user,
             'jobs' => $jobByAuthor,
-            'countJobs' => $countJobs
+            'countJobs' => $countJobs,
+            'applies' => $appliesByUser,
+            'countAppliesByUser' => $countAppliesByUser,
+            'appliesForEmployee' => $appliesForEmployee,
+            'countAppliesForEmployee' => $countAppliesForEmployee
         ]);
     }
 

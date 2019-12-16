@@ -14,10 +14,20 @@ class ApplyType extends AbstractType
     {
         $builder
             ->add('cvResume', FileType::class, [
-
+                'label' => false,
+                'required' => true,
+                'help' => "Votre cv au format PDF",
+                'attr' => [
+                    'placeholder' => "Séléctionner votre CV"
+                ]
             ])
             ->add('coverLetter', FileType::class, [
-
+                'label' => false,
+                'required' => true,
+                'help' => "Votre lettre de motivation au format PDF",
+                'attr' => [
+                    'placeholder' => "Séléctionner votre lettre de motivation"
+                ]
             ])
             ->add('phoneNumber')
         ;

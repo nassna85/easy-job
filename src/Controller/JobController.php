@@ -70,8 +70,10 @@ class JobController extends AbstractController
      */
     public function show(Job $job)
     {
+        $user = $this->getUser();
         return $this->render('job/show.html.twig', [
-            'job' => $job
+            'job' => $job,
+            'user' => $user
         ]);
     }
 
