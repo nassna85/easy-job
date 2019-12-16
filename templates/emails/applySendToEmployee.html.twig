@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Candidature pour le poste de {{ apply.job.title }}</title>
+</head>
+<body>
+    <h2>Bonjour {{ apply.job.contactPerson }},</h2>
+    <p>
+        Une nouvelle candidature pour le poste de {{ apply.job.title }} avec la référence {{ apply.job.id }} a été envoyée par {{ apply.user.fullName }}.
+    </p>
+    <p>
+        Vous pouvez vous rendre <a href="{{ url('account_profile') }}">sur votre profil</a> afin d'avoir plus d'informations concernant cette candidature.
+    </p>
+    <p>
+        Nous vous remercions pour votre confiance.
+    </p>
+    <p>
+        L'équipe EasyJob.
+    </p>
+</body>
+</html>

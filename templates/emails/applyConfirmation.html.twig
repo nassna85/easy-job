@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confirmation de votre candidature</title>
+</head>
+<body>
+    <h2>Bonjour {{ user.fullName }},</h2>
+    <p>
+        Nous vous confirmons que votre candidature pour le poste de <strong>{{ job.title }}</strong> avec la référence <strong>{{ job.id }}</strong> a bien été envoyée.
+    </p>
+    <p>
+        Vous pouvez consulter votre candidature en vous rendant <a href="{{ url('account_profile') }}">sur votre profil</a>.
+    </p>
+    <p>
+        Nous vous souhaitons bonne chance pour la suite.
+    </p>
+    <p>
+        L'équipe EasyJob.
+    </p>
+</body>
+</html>
