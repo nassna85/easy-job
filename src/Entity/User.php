@@ -106,10 +106,16 @@ class User implements UserInterface
      */
     private $active;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Apply", mappedBy="user", orphanRemoval=true)
+     */
+    private $applies;
+
     public function __construct()
     {
         $this->jobs = new ArrayCollection();
         $this->active = false;
+        $this->applies = new ArrayCollection();
     }
 
     /**
@@ -319,6 +325,37 @@ class User implements UserInterface
     public function setActive(bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Apply[]
+     */
+    public function getApplies(): Collection
+    {
+        return $this->applies;
+    }
+
+    public function addApply(Apply $apply): self
+    {
+        if (!$this->applies->contains($apply)) {
+            $this->applies[] = $apply;
+            $apply->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeApply(Apply $apply): self
+    {
+        if ($this->applies->contains($apply)) {
+            $this->applies->removeElement($apply);
+            // set the owning side to null (unless already changed)
+            if ($apply->getUser() === $this) {
+                $apply->setUser(null);
+            }
+        }
 
         return $this;
     }

@@ -46,8 +46,8 @@
                 </div>
                 <div class="col-lg-4 order-0 order-lg-1">
                     <div class="d-flex">
-                        <button class="btn btn-primary mr-3"><i class="far fa-heart"></i> Enregistrer</button>
-                        <button class="btn btn-danger">Postuler</button>
+                        <a href="" class="btn btn-primary mr-3"><i class="far fa-heart"></i> Enregistrer</a>
+                        <a href="{{ path('apply_index', {id:job.id, slug:job.slug}) }}" class="btn btn-danger">Postuler</a>
                     </div>
                     <div class="bg-light p-3 border rounded bg-sommary">
                         <h3 class="pl-3 text-primary">Informations</h3>

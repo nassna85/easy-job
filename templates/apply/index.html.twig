@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/apply-form') }}
+{% endblock %}
+
+{% block title %}Candidature pour le poste de {{ job.title }}{% endblock %}
+
+{% block body %}
+    <section class="apply-header">
+        <div class="container">
+            <p>{{ user.fullName }}, vous êtes sur le point de postuler pour l'offre d'emploi suivant :<br> <strong>{{ job.title }}</strong> ayant la référence <strong>{{ job.id }}</strong></p>
+        </div>
+    </section>
+
+    <section class="apply-form">
+        <div class="container">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Postuler !</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}

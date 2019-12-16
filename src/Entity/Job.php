@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -116,6 +118,16 @@ class Job
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Apply", mappedBy="job", orphanRemoval=true)
+     */
+    private $applies;
+
+    public function __construct()
+    {
+        $this->applies = new ArrayCollection();
+    }
 
     /**
      * @ORM\PrePersist()
@@ -281,6 +293,37 @@ class Job
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Apply[]
+     */
+    public function getApplies(): Collection
+    {
+        return $this->applies;
+    }
+
+    public function addApply(Apply $apply): self
+    {
+        if (!$this->applies->contains($apply)) {
+            $this->applies[] = $apply;
+            $apply->setJob($this);
+        }
+
+        return $this;
+    }
+
+    public function removeApply(Apply $apply): self
+    {
+        if ($this->applies->contains($apply)) {
+            $this->applies->removeElement($apply);
+            // set the owning side to null (unless already changed)
+            if ($apply->getJob() === $this) {
+                $apply->setJob(null);
+            }
+        }
 
         return $this;
     }
