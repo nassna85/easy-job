@@ -9,10 +9,12 @@ use App\Form\PasswordEditType;
 use App\Form\UserProfileEditType;
 use App\Repository\ApplyRepository;
 use App\Repository\JobRepository;
+use App\Services\Uploader\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -161,12 +163,25 @@ class AccountProfileController extends AbstractController
      * @Security("is_granted('ROLE_USER') and user === job.getAuthor()")
      * @param Job $job
      * @param EntityManagerInterface $manager
+     * @param UploaderHelper $uploaderHelper
      * @return RedirectResponse
      */
-    public function deleteJob(Job $job, EntityManagerInterface $manager)
+    public function deleteJob(Job $job, EntityManagerInterface $manager, UploaderHelper $uploaderHelper)
     {
+        $appliesOfJob = $job->getApplies();
         $manager->remove($job);
         $manager->flush();
+
+        if($appliesOfJob)
+        {
+            for ($i = 0; $i < count($appliesOfJob); $i++)
+            {
+                $cvResumeFile = $appliesOfJob[$i]->getCvResume();
+                $cvCoverLetter = $appliesOfJob[$i]->getCoverLetter();
+                $uploaderHelper->deleteUploadFile(new Filesystem(),"/cvResume/", $cvResumeFile);
+                $uploaderHelper->deleteUploadFile(new Filesystem(),"/coverLetter/", $cvCoverLetter);
+            }
+        }
 
         $this->addFlash(
             'success',
