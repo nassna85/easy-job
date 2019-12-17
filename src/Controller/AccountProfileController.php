@@ -35,18 +35,14 @@ class AccountProfileController extends AbstractController
     {
         $user = $this->getUser();
         $jobByAuthor = $repository->findBy(["author" => $user]);
-        $appliesByUser = $applyRepository->findBy(['user' => $user]);
         $appliesForEmployee = $applyRepository->findBy(['job' => $jobByAuthor]);
         $countJobs = count($jobByAuthor);
-        $countAppliesByUser = count($appliesByUser);
         $countAppliesForEmployee = count($appliesForEmployee);
 
         return $this->render('account_profile/profile.html.twig', [
             'user' => $user,
             'jobs' => $jobByAuthor,
             'countJobs' => $countJobs,
-            'applies' => $appliesByUser,
-            'countAppliesByUser' => $countAppliesByUser,
             'appliesForEmployee' => $appliesForEmployee,
             'countAppliesForEmployee' => $countAppliesForEmployee
         ]);

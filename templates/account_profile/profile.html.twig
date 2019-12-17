@@ -128,42 +128,9 @@
                         <h3>Vous n'avez actuellement aucune candidatures reçues !</h3>
                     {% endif %}
                 {% else %}
-                    <h1 class="mb-5">Liste de vos candidatures</h1>
+                    <h1 class="mb-5">Liste de vos favoris</h1>
 
-                    {% if countAppliesByUser > 0 %}
-                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                            <table class="table table-hover table-responsive text-nowrap">
-                                <thead>
-                                <tr>
-                                    <th scope="col">Envoyée le</th>
-                                    <th scope="col">Référence</th>
-                                    <th scope="col">Titre de l'emploi</th>
-                                    <th scope="col">Personne de contact</th>
-                                    <th scope="col">Email de contact</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    {% for apply in applies %}
-                                        <tr>
-                                            <td>{{ apply.createdAt | date('d/m/Y') }}</td>
-                                            <td>{{ apply.job.id }}</td>
-                                            <td>{{ apply.job.title }}</td>
-                                            <td>{{ apply.job.contactPerson }}</td>
-                                            <td>{{ apply.job.emailContact }}</td>
-                                            <td class="d-flex">
-                                                <a href="{{ path('job_show', {id:apply.job.id, slug:apply.job.slug}) }}" class="btn btn-sm btn-primary mr-2">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    {% else %}
-                        <h2>Vous n'avez aucune candidature envoyée depuis votre profil pour l'instant ou les emplois pour lesquels vous avez postulé n'éxiste plus !</h2>
-                    {% endif %}
+                    <p>Ici mettre les cards job favoris de l'utilisateur !!!</p>
                 {% endif %}
             </div>
         </section>
