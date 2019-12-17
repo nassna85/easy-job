@@ -9,8 +9,11 @@ use App\Services\Email\ApplySendler;
 use App\Services\Uploader\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApplyController extends AbstractController
 {
     /**
-     * @Route("/candidature/{slug}/{id}", name="apply_index")
+     * @Route("/candidature/{slug}/{id}/nouveau", name="apply_new")
      * @IsGranted("ROLE_USER")
      * @param Job $job
      * @param Request $request
@@ -27,7 +30,7 @@ class ApplyController extends AbstractController
      * @param ApplySendler $applySendler
      * @return Response
      */
-    public function index(Job $job, Request $request, EntityManagerInterface $manager, UploaderHelper $uploaderHelper, ApplySendler $applySendler)
+    public function new(Job $job, Request $request, EntityManagerInterface $manager, UploaderHelper $uploaderHelper, ApplySendler $applySendler)
     {
         $user = $this->getUser();
         $apply = new Apply();
@@ -74,5 +77,35 @@ class ApplyController extends AbstractController
             'user' => $user,
             'form' => $form-> createView()
         ]);
+    }
+
+    /**
+     * @Route("candidature/suppression-candidature/{id}", name="apply_delete")
+     * @Security("is_granted('ROLE_USER') and user === apply.getJob().getAuthor()")
+     * @param Apply $apply
+     * @param EntityManagerInterface $manager
+     * @param UploaderHelper $uploaderHelper
+     * @return RedirectResponse
+     */
+    public function delete(Apply $apply, EntityManagerInterface $manager, UploaderHelper $uploaderHelper)
+    {
+        $fileCvResume = $apply->getCvResume();
+        $fileCoverLetter = $apply->getCoverLetter();
+
+        $manager->remove($apply);
+        $manager->flush();
+
+        if($fileCvResume && $fileCoverLetter)
+        {
+            $uploaderHelper->deleteUploadFile(new Filesystem(), '/cvResume/', $fileCvResume);
+            $uploaderHelper->deleteUploadFile(new Filesystem(), '/coverLetter/', $fileCoverLetter);
+        }
+
+        $this->addFlash(
+            'success',
+            "La candidature a bien été supprimé."
+        );
+
+        return $this->redirectToRoute('account_profile');
     }
 }

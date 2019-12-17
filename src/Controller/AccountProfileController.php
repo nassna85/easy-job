@@ -168,16 +168,16 @@ class AccountProfileController extends AbstractController
      */
     public function deleteJob(Job $job, EntityManagerInterface $manager, UploaderHelper $uploaderHelper)
     {
-        $appliesOfJob = $job->getApplies();
+        $appliesOfThisJob = $job->getApplies();
         $manager->remove($job);
         $manager->flush();
-
-        if($appliesOfJob)
+        //Delete files cvResume and coverLetter with relation this Job
+        if($appliesOfThisJob)
         {
-            for ($i = 0; $i < count($appliesOfJob); $i++)
+            for ($i = 0; $i < count($appliesOfThisJob); $i++)
             {
-                $cvResumeFile = $appliesOfJob[$i]->getCvResume();
-                $cvCoverLetter = $appliesOfJob[$i]->getCoverLetter();
+                $cvResumeFile = $appliesOfThisJob[$i]->getCvResume();
+                $cvCoverLetter = $appliesOfThisJob[$i]->getCoverLetter();
                 $uploaderHelper->deleteUploadFile(new Filesystem(),"/cvResume/", $cvResumeFile);
                 $uploaderHelper->deleteUploadFile(new Filesystem(),"/coverLetter/", $cvCoverLetter);
             }
