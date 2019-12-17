@@ -111,11 +111,17 @@ class User implements UserInterface
      */
     private $applies;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\JobLike", mappedBy="user", orphanRemoval=true)
+     */
+    private $likes;
+
     public function __construct()
     {
         $this->jobs = new ArrayCollection();
         $this->active = false;
         $this->applies = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     /**
@@ -354,6 +360,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($apply->getUser() === $this) {
                 $apply->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|JobLike[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(JobLike $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(JobLike $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getUser() === $this) {
+                $like->setUser(null);
             }
         }
 

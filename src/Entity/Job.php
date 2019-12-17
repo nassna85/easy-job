@@ -124,9 +124,15 @@ class Job
      */
     private $applies;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\JobLike", mappedBy="job", orphanRemoval=true)
+     */
+    private $likes;
+
     public function __construct()
     {
         $this->applies = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     /**
@@ -322,6 +328,37 @@ class Job
             // set the owning side to null (unless already changed)
             if ($apply->getJob() === $this) {
                 $apply->setJob(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|JobLike[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(JobLike $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setJob($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(JobLike $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getJob() === $this) {
+                $like->setJob(null);
             }
         }
 
