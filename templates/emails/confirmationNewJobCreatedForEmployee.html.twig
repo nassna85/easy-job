@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confirmation de la mise en ligne de votre nouvel emploi</title>
+</head>
+<body>
+    <h1>Bonjour {{ job.author.fullName }},</h1>
+    <p>Nous vous confirmons l'ajout sur notre site de votre nouvel emploi intitulé <strong>{{ job.title }}</strong> avec la référence <strong>{{ job.id }}</strong></p>
+    <p>Vous pouvez consulter votre offre d'emploi en vous rendant <a href="{{ url('job_show', {id:job.id, slug:job.slug}) }}">sur votre offre</a>.</p>
+    <p>Nous vous remercions de votre confiance.</p>
+    <p>L'équipe EasyJob.</p>
+</body>
+</html>

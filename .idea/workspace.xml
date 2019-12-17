@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/profile-user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/profile-user.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccountProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ApplyType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ApplyType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account_profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account_profile/profile.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +184,8 @@
       <workItem from="1576250224053" duration="14863000" />
       <workItem from="1576406572345" duration="20067000" />
       <workItem from="1576496637166" duration="1500000" />
-      <workItem from="1576509797052" duration="15535000" />
+      <workItem from="1576509797052" duration="16290000" />
+      <workItem from="1576587212456" duration="1527000" />
     </task>
     <servers />
   </component>
@@ -197,10 +193,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1576253008088">
+    <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1576587539794">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576253008088" />
+    <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576587539794" />
     <state x="698" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576523814450">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -209,18 +205,18 @@
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="992" y="226" key="IDE.errors.dialog/0.23.1920.970@0.23.1920.970" timestamp="1575910821488" />
-    <state x="607" y="363" key="NewPhpClassDialog" timestamp="1576523785940">
+    <state x="607" y="363" key="NewPhpClassDialog" timestamp="1576587439275">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="607" y="363" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576523785940" />
+    <state x="607" y="363" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576587439275" />
     <state x="930" y="144" key="SettingsEditor" timestamp="1575726192167">
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="930" y="144" key="SettingsEditor/0.23.1920.970@0.23.1920.970" timestamp="1575726192167" />
-    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576509806338">
+    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576587217571">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576509806338" />
+    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576587217571" />
     <state x="1114" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.973@0.23.1920.973" timestamp="1575825870031" />
     <state x="1069" y="235" width="670" height="754" key="search.everywhere.popup" timestamp="1576177703364">
       <screen x="0" y="0" width="1920" height="1080" />

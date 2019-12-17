@@ -7,6 +7,7 @@ use App\Entity\Job;
 use App\Form\JobNewType;
 use App\Form\SearchJobType;
 use App\Repository\JobRepository;
+use App\Services\Email\JobSendler;
 use App\Services\JobSearch\SearchData;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -82,9 +83,10 @@ class JobController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @param Request $request
      * @param EntityManagerInterface $manager
+     * @param JobSendler $jobSendler
      * @return Response
      */
-    public function new(Request $request, EntityManagerInterface $manager)
+    public function new(Request $request, EntityManagerInterface $manager, JobSendler $jobSendler)
     {
         $user = $this->getUser();
 
@@ -97,6 +99,9 @@ class JobController extends AbstractController
             $job->setAuthor($user);
             $manager->persist($job);
             $manager->flush();
+
+            $jobSendler->confirmationNewJobCreatedForEmployee($job);
+            $jobSendler->confirmationNewJobCreated($job);
 
             $this->addFlash(
                 'success',
