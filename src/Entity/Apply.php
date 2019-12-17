@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ApplyRepository")
@@ -41,6 +42,11 @@ class Apply
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez indiquer votre numéro de téléphone")
+     * @Assert\Regex(
+     *     pattern="/^[0-9]{3,4}[\/][0-9]{2}[\/][0-9]{2}[\/][0-9]{2}$/",
+     *     message="Le format est incorrect : (0489/89/89/89) !"
+     * )
      */
     private $phoneNumber;
 
