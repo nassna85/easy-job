@@ -4,14 +4,17 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Job;
+use App\Entity\JobLike;
 use App\Form\JobNewType;
 use App\Form\SearchJobType;
+use App\Repository\JobLikeRepository;
 use App\Repository\JobRepository;
 use App\Services\Email\JobSendler;
 use App\Services\JobSearch\SearchData;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -117,5 +120,49 @@ class JobController extends AbstractController
             'form' => $form->createView(),
             'user' => $user
         ]);
+    }
+
+    /**
+     * Permet de liker ou pas un job
+     * @Route("/emploi/{id}/like", name="job_like")
+     * @param Job $job
+     * @param EntityManagerInterface $manager
+     * @param JobLikeRepository $repository
+     * @return JsonResponse
+     */
+    public function like(Job $job, EntityManagerInterface $manager, JobLikeRepository $repository)
+    {
+        $user = $this->getUser();
+
+        if(!$user)
+        {
+            return $this->json([
+                'code' => 403,
+                'message' => "Vous devez être connecté pour aimé un job. Accès refusé !"
+            ], 403);
+        }
+
+        if($job->isLikedByUser($user))
+        {
+            $like = $repository->findOneBy(['job' => $job, 'user' => $user]);
+            $manager->remove($like);
+            $manager->flush();
+
+            return $this->json([
+                'code' => 200,
+                'message' => "Like bien supprimé"
+            ], 200);
+        }
+
+        $like = new JobLike();
+        $like->setJob($job)
+             ->setUser($user);
+        $manager->persist($like);
+        $manager->flush();
+
+        return $this->json([
+            'code' => 200,
+            'message' => "Like bien ajouté"
+        ], 200);
     }
 }

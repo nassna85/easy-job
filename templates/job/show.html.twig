@@ -46,7 +46,14 @@
                 </div>
                 <div class="col-lg-4 order-0 order-lg-1">
                     <div class="d-flex">
-                        <a href="" class="btn btn-primary mr-3"><i class="far fa-heart"></i> Enregistrer</a>
+                        <a href="{{ path('job_like', {id:job.id}) }}" class="btn btn-primary mr-3 js-like">
+                            {% if app.user and job.isLikedByUser(app.user) %}
+                                <i class="fas fa-heart"></i>
+                            {% else %}
+                                <i class="far fa-heart"></i>
+                            {% endif %}
+                            Enregistrer
+                        </a>
                         <a href="{{ path('apply_new', {id:job.id, slug:job.slug}) }}" class="btn btn-danger">Postuler</a>
                     </div>
                     <div class="bg-light p-3 border rounded bg-sommary">
@@ -82,4 +89,9 @@
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('js/showJob') }}
 {% endblock %}

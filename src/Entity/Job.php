@@ -364,4 +364,18 @@ class Job
 
         return $this;
     }
+
+    /**
+     * Permet de savoir si l'utilisateur connecté aime ce job
+     * @param User $user
+     * @return bool
+     */
+    public function isLikedByUser(User $user) : bool
+    {
+        foreach ($this->likes as $like)
+        {
+            if($like->getUser() === $user ) return true;
+        }
+        return false;
+    }
 }
