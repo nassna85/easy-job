@@ -67,10 +67,13 @@
     <section class="section-recent-job-homepage bg-light">
         <div class="container">
             <h2 class="text-center">Emplois récent</h2>
-
-            {% for lastJob in lastJobs %}
-                {% include 'job/_card-job.html.twig' with {job:lastJob} %}
-            {% endfor %}
+            {% if countLastJobs > 0 %}
+                {% for lastJob in lastJobs %}
+                    {% include 'job/_card-job.html.twig' with {job:lastJob} %}
+                {% endfor %}
+            {% else %}
+                <h3>Aucune offre d'emploi est disponible pour le moment !</h3>
+            {% endif %}
 
         </div>
     </section>

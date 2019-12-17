@@ -19,9 +19,11 @@ class HomePageController extends AbstractController
     public function index(JobRepository $repository, CategoryRepository $categoryRepository)
     {
         $categories = $categoryRepository->findAll();
+        $lastJobs = $repository->lastJobs(5);
 
         return $this->render('homepage/homepage.html.twig', [
-            'lastJobs' => $repository->lastJobs(5),
+            'lastJobs' => $lastJobs,
+            'countLastJobs' => count($lastJobs),
             'categories' => $categories,
         ]);
     }
