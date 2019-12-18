@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/homepage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ApplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ApplyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +187,8 @@
       <workItem from="1576406572345" duration="20067000" />
       <workItem from="1576496637166" duration="1500000" />
       <workItem from="1576509797052" duration="16290000" />
-      <workItem from="1576587212456" duration="20118000" />
+      <workItem from="1576587212456" duration="20174000" />
+      <workItem from="1576685832034" duration="2271000" />
     </task>
     <servers />
   </component>
@@ -218,10 +216,10 @@
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="930" y="144" key="SettingsEditor/0.23.1920.970@0.23.1920.970" timestamp="1575726192167" />
-    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576587217571">
+    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576685843962">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576587217571" />
+    <state x="1114" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576685843962" />
     <state x="1114" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.973@0.23.1920.973" timestamp="1575825870031" />
     <state x="1069" y="235" width="670" height="754" key="search.everywhere.popup" timestamp="1576177703364">
       <screen x="0" y="0" width="1920" height="1080" />

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('css/page-error') }}
+{% endblock %}
+
+{% block title %}Page non trouvée{% endblock %}
+
+{% block body %}
+    <section class="page-not-found">
+        <div class="container">
+            <img src="{{ asset('/build/images/page-not-found.svg') }}" alt="page non trouvée" class="img-fluid">
+            <div class="text-center">
+                <a href="{{ path('homepage') }}" class="btn btn-danger">
+                    <i class="fas fa-arrow-left"></i>
+                    Vers l'accueil
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApplyController extends AbstractController
 {
     /**
-     * @Route("/candidature/{slug}/{id}/nouveau", name="apply_new")
+     * @Route("/candidature/{slug}/{id}", name="apply_new")
      * @IsGranted("ROLE_USER")
      * @param Job $job
      * @param Request $request
