@@ -36,11 +36,12 @@
                     </p>
                     <h3>Comment postuler ?</h3>
                     <ul class="list-unstyled">
-                        <li class="mb-2">
+                        <li class="mb-3">
                             <span class="font-weight-bold">Soit par email:</span><br>Il vous suffit d'envoyer un email à la personne de contact en y joignant votre CV et lettre de motivation et en n'oubliant pas de <strong>mentionner la référence de l'offre !</strong>
                         </li>
                         <li>
-                            <span class="font-weight-bold">Soit directement sur le site:</span><br>Il vous suffit de cliquer sur le bouton postuler
+                            <span class="font-weight-bold">Soit directement sur le site:</span><br>
+                            <a href="{{ path('apply_new', {id:job.id, slug:job.slug}) }}" class="btn btn-danger mt-2">Postuler maintenant</a>
                         </li>
                     </ul>
                 </div>

@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/profile-user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/profile-user.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccountProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/user-registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/user-registration.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account_profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account_profile/profile.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/JobRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job/showCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/showCategory.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +189,7 @@
       <workItem from="1576496637166" duration="1500000" />
       <workItem from="1576509797052" duration="16290000" />
       <workItem from="1576587212456" duration="20174000" />
-      <workItem from="1576685832034" duration="4947000" />
+      <workItem from="1576685832034" duration="6000000" />
     </task>
     <servers />
   </component>

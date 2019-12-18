@@ -73,7 +73,7 @@ class JobRepository extends ServiceEntityRepository
                 ->setParameter('pl', $search->getPlaces());
         }
         $query = $query
-            ->orderBy('j.createdAt', 'ASC');
+            ->orderBy('j.createdAt', 'DESC');
 
         $query = $query->getQuery();
         return $this->paginator->paginate(

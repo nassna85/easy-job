@@ -28,7 +28,7 @@
                 Retrouver toutes les offres d'emplois correspondant à la catégorie <strong>{{ currentCategory }}</strong>.
             </p>
             {% if jobsByCategories | length > 0 %}
-                {% for jobByCategory in jobsByCategories %}
+                {% for jobByCategory in jobsByCategories | reverse %}
                     {% include 'job/_card-job.html.twig' with {job:jobByCategory} %}
                 {% endfor %}
             {% else %}

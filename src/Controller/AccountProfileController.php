@@ -36,8 +36,8 @@ class AccountProfileController extends AbstractController
     public function profile(JobRepository $repository, ApplyRepository $applyRepository, JobLikeRepository $likeRepository)
     {
         $user = $this->getUser();
-        $jobByAuthor = $repository->findBy(["author" => $user]);
-        $appliesForEmployee = $applyRepository->findBy(['job' => $jobByAuthor]);
+        $jobByAuthor = $repository->findBy(["author" => $user], ['createdAt' => 'DESC']);
+        $appliesForEmployee = $applyRepository->findBy(['job' => $jobByAuthor], ['createdAt' => "DESC"]);
         $likesByUser = $likeRepository->findBy(['user' => $user]);
         $countLike = count($likesByUser);
         $countJobs = count($jobByAuthor);
