@@ -3,6 +3,7 @@
 {% block stylesheets %}
     {{ parent() }}
     {{ encore_entry_link_tags('css/profile-user') }}
+    {{ encore_entry_link_tags('css/card-job') }}
 {% endblock %}
 
 {% block title %}Profil de {{ user.firstName }} {{ user.lastName }}{% endblock %}
@@ -128,9 +129,16 @@
                         <h3>Vous n'avez actuellement aucune candidatures reçues !</h3>
                     {% endif %}
                 {% else %}
-                    <h1 class="mb-5">Liste de vos favoris</h1>
+                    <h1 class="mb-3">Liste de vos favoris</h1>
+                    <h3 class="mb-5">Vous avez actuellement <span class="countLikes">{{ countLikes }}</span> favori(s) !</h3>
 
-                    <p>Ici mettre les cards job favoris de l'utilisateur !!!</p>
+                    {% if countLikes > 0 %}
+                        {% for likeByUser in likesByUser %}
+                            {% include 'job/_card-job.html.twig' with {job:likeByUser.job} %}
+                        {% endfor %}
+                    {% else %}
+                        <h3>Vous n'avez pas de favoris pour l'instant...</h3>
+                    {% endif %}
                 {% endif %}
             </div>
         </section>

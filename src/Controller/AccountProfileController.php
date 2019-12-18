@@ -8,6 +8,7 @@ use App\Form\JobNewType;
 use App\Form\PasswordEditType;
 use App\Form\UserProfileEditType;
 use App\Repository\ApplyRepository;
+use App\Repository\JobLikeRepository;
 use App\Repository\JobRepository;
 use App\Services\Uploader\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
@@ -29,13 +30,16 @@ class AccountProfileController extends AbstractController
      * @IsGranted("ROLE_USER")
      * @param JobRepository $repository
      * @param ApplyRepository $applyRepository
+     * @param JobLikeRepository $likeRepository
      * @return Response
      */
-    public function profile(JobRepository $repository, ApplyRepository $applyRepository)
+    public function profile(JobRepository $repository, ApplyRepository $applyRepository, JobLikeRepository $likeRepository)
     {
         $user = $this->getUser();
         $jobByAuthor = $repository->findBy(["author" => $user]);
         $appliesForEmployee = $applyRepository->findBy(['job' => $jobByAuthor]);
+        $likesByUser = $likeRepository->findBy(['user' => $user]);
+        $countLike = count($likesByUser);
         $countJobs = count($jobByAuthor);
         $countAppliesForEmployee = count($appliesForEmployee);
 
@@ -44,7 +48,9 @@ class AccountProfileController extends AbstractController
             'jobs' => $jobByAuthor,
             'countJobs' => $countJobs,
             'appliesForEmployee' => $appliesForEmployee,
-            'countAppliesForEmployee' => $countAppliesForEmployee
+            'countAppliesForEmployee' => $countAppliesForEmployee,
+            'countLikes' => $countLike,
+            'likesByUser' => $likesByUser
         ]);
     }
 

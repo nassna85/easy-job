@@ -1,5 +1,9 @@
 @import "./variable.scss";
 
+body {
+  background-color: #fcfcfc;
+}
+
 /* PAGE PROFILE USER */
 section.header-profile-user {
   margin-top: 81px;
@@ -28,6 +32,9 @@ section.content-profile-user {
   }
   td {
     font-size: 12px;
+  }
+  .countLikes {
+    color: $danger;
   }
 }
 
