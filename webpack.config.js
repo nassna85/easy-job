@@ -43,6 +43,7 @@ Encore
     .addStyleEntry('css/profile-user', './assets/css/profile-user.scss')
     .addStyleEntry('css/apply-form', './assets/css/apply-form.scss')
     .addStyleEntry('css/page-error', './assets/css/page-error.scss')
+    .addStyleEntry('css/contact', './assets/css/contact.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
