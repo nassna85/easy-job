@@ -10,9 +10,9 @@
 {% block body %}
     <section class="page-not-found">
         <div class="container">
-            <img src="{{ asset('/build/images/page-not-found.svg') }}" alt="page non trouvée" class="img-fluid">
             <div class="text-center">
-                <a href="{{ path('homepage') }}" class="btn btn-danger">
+                <img src="{{ asset('/build/images/page-not-found.svg') }}" alt="page non trouvée" class="img-fluid">
+                <a href="{{ path('homepage') }}" class="btn btn-danger btn-error-404">
                     <i class="fas fa-arrow-left"></i>
                     Vers l'accueil
                 </a>
