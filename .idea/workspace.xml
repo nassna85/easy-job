@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +154,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/category" />
       <recent name="$PROJECT_DIR$/templates/admin/job" />
       <recent name="$PROJECT_DIR$/templates/admin/account" />
       <recent name="$PROJECT_DIR$/templates/admin/dashboard" />
@@ -196,7 +196,7 @@
       <workItem from="1576509797052" duration="16290000" />
       <workItem from="1576587212456" duration="20174000" />
       <workItem from="1576685832034" duration="6907000" />
-      <workItem from="1576763805790" duration="15728000" />
+      <workItem from="1576763805790" duration="17478000" />
     </task>
     <servers />
   </component>
