@@ -186,6 +186,12 @@ nav.bg-navbar {
     display: block;
   }
 }
+nav.bg-navbar.admin {
+  background-color: $dark;
+  .dropdown-menu {
+    background-color: $dark;
+  }
+}
 
 /* FOOTER */
 
