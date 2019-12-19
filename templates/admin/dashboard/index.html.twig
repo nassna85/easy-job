@@ -1,11 +1,68 @@
 {% extends 'admin/base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+        h1 {
+            color: #54494b;
+        }
+        .row {
+            margin-top: 100px;
+        }
+    </style>
+{% endblock %}
+
 {% block title %}Dashboard{% endblock %}
 
 {% block body %}
     <section class="dashboard" style="margin-top: 150px">
         <div class="container">
-            <h1>Dashboard</h1>
+            <h1 class="font-weight-bold">Dashboard</h1>
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold">Utilisateurs</h5>
+                            <p class="card-text font-weight-bold text-center">{{ stats.countTotalUsers }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold">Emplois</h5>
+                            <p class="card-text font-weight-bold text-center">{{ stats.countTotalJobs }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card text-white bg-warning mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold">Catégories</h5>
+                            <p class="card-text font-weight-bold text-center">{{ stats.countTotalCategories }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card text-white bg-dark mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold">Candidatures</h5>
+                            <p class="card-text font-weight-bold text-center">{{ stats.countTotalApplies }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card text-white bg-danger">
+                        <div class="card-body">
+                            <h5 class="card-title text-center font-weight-bold">Contact</h5>
+                            <p class="card-text font-weight-bold text-center">{{ stats.countTotalContact }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}
