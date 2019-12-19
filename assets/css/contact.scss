@@ -3,3 +3,50 @@
 body {
   background-color: #fcfcfc;
 }
+
+section.header-contact {
+  margin-top: 81px;
+  background-color: lightgray;
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    h1 {
+      color: $secondary;
+      font-weight: 500;
+    }
+  }
+}
+section.content-contact {
+  margin-top: 100px;
+  p {
+    color: $secondary;
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  form {
+    max-width: 600px;
+    margin: 100px auto;
+    border: 1px solid #cccccc;
+    padding: 30px;
+    border-radius: 5px;
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 767px) {
+  section.header-contact {
+    padding: 80px 0;
+    .grid {
+      grid-template-columns: 1fr;
+      h1 {
+        display: none;
+      }
+    }
+  }
+}

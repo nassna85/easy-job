@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demande de contact</title>
+</head>
+<body>
+<h1>Vous avez reçu une demande de contact de la part de <strong>{{ contact.firstName }} {{ contact.lastName }}</strong>.</h1>
+<ul>
+    <li style="margin-bottom: 10px">
+        Nom : <strong>{{ contact.lastName }}</strong>
+    </li>
+    <li style="margin-bottom: 10px">
+        Prénom: <strong>{{ contact.firstName }}</strong>
+    </li>
+    <li style="margin-bottom: 10px">
+        Email: <strong>{{ contact.email }}</strong>
+    </li>
+    <li style="margin-bottom: 10px">
+        Téléphone:
+        {% if contact.phoneNumber %}
+            <strong>{{ contact.phoneNumber }}</strong>
+        {% else %}
+            <strong>Non communiqué !</strong>
+        {% endif %}
+    </li>
+    <li>
+        Message : <br>
+        {{ contact.message | nl2br }}
+    </li>
+</ul>
+</body>
+</html>
