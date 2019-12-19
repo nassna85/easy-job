@@ -1,0 +1,17 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modification d'un emploi{% endblock %}
+
+{% block body %}
+    <section class="admin-edit-job" style="margin-top: 120px">
+        <div class="container">
+            <h1>Modification de l'emploi <strong>{{ job.title }}</strong> avec la référence <strong>{{ job.id }}</strong></h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Confirmer</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
