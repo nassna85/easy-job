@@ -72,6 +72,16 @@ class Contact
     private $createdAt;
 
     /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $resolved;
+
+    public function __construct()
+    {
+        $this->resolved = false;
+    }
+
+    /**
      * @ORM\PrePersist()
      */
     public function initializeCreatedAt()
@@ -152,6 +162,18 @@ class Contact
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getResolved(): ?bool
+    {
+        return $this->resolved;
+    }
+
+    public function setResolved(?bool $resolved): self
+    {
+        $this->resolved = $resolved;
 
         return $this;
     }

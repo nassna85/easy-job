@@ -1,0 +1,59 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Liste des demandes de contact{% endblock %}
+
+{% block body %}
+    <section class="admin-contact" style="margin-top: 120px">
+        <div class="container">
+            <h1 class="mb-5">Liste des demandes de contact</h1>
+
+            <table class="table table-hover table-responsive text-nowrap">
+                <thead>
+                <tr>
+                    <th scope="col">Envoyé le</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Résolu</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ contact.firstName }}</td>
+                        <td>{{ contact.lastName }}</td>
+                        <td>{{ contact.email }}...</td>
+                        <td>{{ contact.message | slice(0, 20) }}...</td>
+                        <td>
+                            {% if contact.phoneNumber %}
+                                {{ contact.phoneNumber }}
+                            {% else %}
+                                <b>Non communiqué</b>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if contact.resolved %}
+                                <span class="badge badge-success">OUI</span>
+                            {% else %}
+                                <span class="badge badge-danger">NON</span>
+                            {% endif %}
+                        </td>
+                        <td class="d-flex">
+                            <a href="{{ path('admin_contact_edit', {id:contact.id}) }}" class="btn btn-sm btn-success mr-2">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="{{ path('admin_contact_delete', {id:contact.id}) }}" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette demande de contact ?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}
