@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/category/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/category/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/category/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/job/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/job/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/coverLetter/Lettre de motivation Developpeur Java pdf-5dfa738da4502.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/coverLetter/Lettre de motivation Developpeur Java pdf-5dfa73df1c939.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/cvResume/CV-2019-dev-pdf-5dfa738da42f0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/cvResume/CV-2019-dev-pdf-5dfa73df1c664.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +157,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/user" />
       <recent name="$PROJECT_DIR$/templates/admin/category" />
       <recent name="$PROJECT_DIR$/templates/admin/job" />
       <recent name="$PROJECT_DIR$/templates/admin/account" />
@@ -199,7 +201,7 @@
       <workItem from="1576587212456" duration="20174000" />
       <workItem from="1576685832034" duration="6907000" />
       <workItem from="1576763805790" duration="17711000" />
-      <workItem from="1576855191058" duration="1034000" />
+      <workItem from="1576855191058" duration="5947000" />
     </task>
     <servers />
   </component>

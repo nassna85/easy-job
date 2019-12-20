@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+    <section class="admin-users" style="margin-top: 120px">
+        <div class="container">
+            <h1 class="mb-4">Liste des utilisateurs actifs</h1>
+
+            <a href="{{ path('admin_user_new') }}" class="btn btn-success mb-5">
+                <i class="fas fa-plus"></i>
+                Ajouter un utilisateur
+            </a>
+
+            <table class="table table-hover table-responsive text-nowrap">
+                <thead>
+                <tr>
+                    <th scope="col">Identifiant</th>
+                    <th scope="col">Inscrit depuis</th>
+                    <th scope="col">Nom/Prénom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users | reverse %}
+                    <tr>
+                        <td class="text-center">{{ user.id }}</td>
+                        <td>{{ user.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ user.fullName }}</td>
+                        <td>{{ user.email | slice(0, 20) }}...</td>
+                        <td class="{% if user.type == "Employeur" %}text-danger{% else %}text-success{% endif %}">
+                            {{ user.type }}
+                        </td>
+                        <td class="d-flex">
+                            <a href="{{ path('admin_user_edit', {id:user.id}) }}" class="btn btn-sm btn-success mr-2">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="{{ path('admin_user_delete', {id:user.id}) }}" class="btn btn-sm btn-danger" onclick="return confirm('Attention, si vous supprimez cet utilisateur, toutes les offres d\'emploi ou candidature de cet utilisateur seront supprimées. Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {{ knp_pagination_render(users) }}
+        </div>
+    </section>
+{% endblock %}
