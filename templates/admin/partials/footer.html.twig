@@ -13,19 +13,19 @@
                     <div class="col-md-6">
                         <h3 class="footer-heading mb-4 text-white">Liens rapides</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Emplois</a></li>
-                            <li><a href="#">Catégories</a></li>
-                            <li><a href="#">Candidature</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ path('admin_dashboard') }}">Dashboard</a></li>
+                            <li><a href="{{ path('admin_job_index') }}">Emplois</a></li>
+                            <li><a href="{{ path('admin_category_index') }}">Catégories</a></li>
+                            <li><a href="{{ path('admin_apply_index') }}">Candidature</a></li>
+                            <li><a href="{{ path('admin_contact_index') }}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <h3 class="footer-heading mb-4 text-white">Actions</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Ajouter un emploi</a></li>
-                            <li><a href="#">Ajouter un utilisateur</a></li>
-                            <li><a href="#">Ajouter une catégorie</a></li>
+                            <li><a href="{{ path('admin_job_new') }}">Ajouter un emploi</a></li>
+                            <li><a href="{{ path('admin_user_new') }}">Ajouter un utilisateur</a></li>
+                            <li><a href="{{ path('admin_category_new') }}">Ajouter une catégorie</a></li>
                         </ul>
                     </div>
                 </div>
