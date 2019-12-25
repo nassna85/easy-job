@@ -28,6 +28,7 @@ Encore
     .addEntry('js/apply', './assets/js/apply.js')
     .addEntry('js/showJob', './assets/js/showJob.js')
     .addEntry('js/registration-user', './assets/js/registration-user.js')
+    .addEntry('js/newJob', './assets/js/newJob.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
     .addStyleEntry('css/app', './assets/css/app.scss')

@@ -2,9 +2,35 @@
     <div class="container">
         <h1 class="h3 mb-5">{{ title }}</h1>
         {{ form_start(form) }}
-        {{ form_widget(form) }}
+
+        <div class="error-message error-title"></div>
+        {{ form_row(form.title) }}
+
+        <div class="error-message error-description"></div>
+        {{ form_row(form.description) }}
+
+        <div class="error-message error-enterprise"></div>
+        {{ form_row(form.enterprise) }}
+
+        <div class="error-message error-place"></div>
+        {{ form_row(form.place) }}
+
+        <div class="error-message error-categories"></div>
+        {{ form_row(form.categories) }}
+
+        <div class="error-message error-experience"></div>
+        {{ form_row(form.experience) }}
+
+        <div class="error-message error-contract"></div>
+        {{ form_row(form.contract) }}
+
+        <div class="error-message error-contactPerson"></div>
+        {{ form_row(form.contactPerson) }}
+
+        <div class="error-message error-emailContact"></div>
+        {{ form_row(form.emailContact) }}
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">{{ title }}</button>
+            <button id="js-btnNewJob" type="submit" class="btn btn-primary">{{ title }}</button>
             <a href="{{ path('account_profile') }}" class="btn btn-danger">Annuler</a>
         </div>
         {{ form_end(form) }}
