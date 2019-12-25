@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+//Like button
 function onClickBtnLike(event) {
     event.preventDefault();
 

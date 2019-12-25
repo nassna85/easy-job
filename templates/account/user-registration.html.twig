@@ -12,17 +12,34 @@
         <div class="container">
             <h1 class="h3 mb-5">Inscrivez-vous</h1>
             {{ form_start(form) }}
+
+            <div class="error-message error-firstName"></div>
             {{ form_row(form.firstName) }}
+
+            <div class="error-message error-lastName"></div>
             {{ form_row(form.lastName) }}
+
+            <div class="error-message error-email"></div>
             {{ form_row(form.email) }}
+
+            <div class="error-message error-type"></div>
             {{ form_row(form.type) }}
+
+            <div class="error-message error-password"></div>
             {{ form_row(form.password) }}
+
+            <div class="error-message error-passwordConfirm"></div>
             {{ form_row(form.passwordConfirm) }}
             <div class="form-group">
-                <button class="btn btn-danger" type="submit">S'inscrire</button>
+                <button id="js-btn-registration-user" class="btn btn-danger" type="submit">S'inscrire</button>
             </div>
             <small>Vous avez déjà un compte ?</small> <a href="{{ path('account_login') }}" class="btn-link text-decoration-none small text-primary">Connectez-vous</a>
             {{ form_end(form) }}
         </div>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('js/registration-user') }}
 {% endblock %}

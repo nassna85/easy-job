@@ -95,6 +95,9 @@ textarea.form-control {
 .form-error-icon {
   display: none;
 }
+.error-message {
+  color: $danger;
+}
 .message-flash {
   margin-top: 85px;
 }
