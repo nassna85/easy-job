@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApplyController extends AbstractController
 {
     /**
-     * @Route("/candidature/{slug}/{id}", name="apply_new")
+     * @Route("/candidature/{slug}/{id}/nouvelle", name="apply_new")
      * @IsGranted("ROLE_USER")
      * @param Job $job
      * @param Request $request
@@ -80,7 +80,7 @@ class ApplyController extends AbstractController
     }
 
     /**
-     * @Route("candidature/suppression-candidature/{id}", name="apply_delete")
+     * @Route("/candidature/{id}/supprimer", name="apply_delete")
      * @Security("is_granted('ROLE_USER') and user === apply.getJob().getAuthor()")
      * @param Apply $apply
      * @param EntityManagerInterface $manager

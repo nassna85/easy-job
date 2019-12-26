@@ -17,9 +17,18 @@
     <section class="apply-form">
         <div class="container">
             {{ form_start(form) }}
-            {{ form_widget(form) }}
+
+            <div class="error-message error-phoneNumber"></div>
+            {{ form_row(form.phoneNumber) }}
+
+            <div class="error-message error-cvResume"></div>
+            {{ form_row(form.cvResume) }}
+
+            <div class="error-message error-coverLetter"></div>
+            {{ form_row(form.coverLetter) }}
+
             <div class="form-group">
-                <button type="submit" class="btn btn-danger">Postuler !</button>
+                <button id="js-btnApplyJob" type="submit" class="btn btn-danger">Postuler !</button>
             </div>
             {{ form_end(form) }}
         </div>

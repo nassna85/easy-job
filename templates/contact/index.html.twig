@@ -21,11 +21,31 @@
             <p>Vous souhaitez avoir plus d'informations concernant un point précis ? N'hésitez pas et contactez-nous en remplissant le formulaire.<br>Notre équipe se fera une joie de vous répondre dans les plus brefs délais.</p>
             {{ form_start(form) }}
             <h2>Nous contacter ?</h2>
-            {{ form_widget(form) }}
+
+            <div class="error-message error-firstName"></div>
+            {{ form_row(form.firstName) }}
+
+            <div class="error-message error-lastName"></div>
+            {{ form_row(form.lastName) }}
+
+            <div class="error-message error-email"></div>
+            {{ form_row(form.email) }}
+
+            <div class="error-message error-messageInput"></div>
+            {{ form_row(form.message) }}
+
+            <div class="error-message error-phoneNumber"></div>
+            {{ form_row(form.phoneNumber) }}
+
             <div class="form-group mt-4">
-                <button type="submit" class="btn btn-primary">Envoyer votre message</button>
+                <button id="btnContact" type="submit" class="btn btn-primary">Envoyer votre message</button>
             </div>
             {{ form_end(form) }}
         </div>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('js/contact') }}
 {% endblock %}

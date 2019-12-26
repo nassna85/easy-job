@@ -13,8 +13,8 @@ class PasswordEdit
      * @Assert\Length(
      *     min="6",
      *     minMessage="Votre nouveau mot de passe doit contenir au minimum 6 caractères !",
-     *     max="12",
-     *     maxMessage="Votre nouveau mot de passe doit contenir au maximum 12 caractères !",
+     *     max="18",
+     *     maxMessage="Votre nouveau mot de passe doit contenir au maximum 18 caractères !",
      *     groups={"registration"}
      * )
      */

@@ -17,28 +17,6 @@
                         <h1 class="mb-5">Cherchez parmis les nombreuses offres d'emplois et trouvez le job idéal...</h1>
                         <a href="{{ path('job_index') }}" class="btn btn-danger">Rechercher maintenant</a>
                     </div>
-                    {#
-                    <form action="#">
-                        <div class="row mb-3">
-                            <div class="col-md-9">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <input type="text" class="mr-3 form-control border-0 px-4" placeholder="Titre de l'emploi">
-                                    </div>
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <div class="input-wrap">
-                                            <span class="icon icon-room"></span>
-                                            <input type="text" class="form-control form-control-block search-input  border-0 px-4" placeholder="Etranger, Belgique">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="submit" class="btn btn-search btn-primary btn-block" value="Rechercher">
-                            </div>
-                        </div>
-                    </form>
-                    #}
                 </div>
             </div>
         </div>
@@ -66,7 +44,7 @@
 
     <section class="section-recent-job-homepage bg-light">
         <div class="container">
-            <h2 class="text-center">Emplois récent</h2>
+            <h2 class="text-center">Emplois récents</h2>
             {% if countLastJobs > 0 %}
                 {% for lastJob in lastJobs %}
                     {% include 'job/_card-job.html.twig' with {job:lastJob} %}
@@ -81,7 +59,7 @@
     <section class="jumbotron jumbotron-fluid call-to-action-employee">
         <div class="container">
             <div class="content-call-to-action-employee">
-                <h2 class="mb-5">Vous êtes un employeur ? <br>Ajouter un emploi et trouver le candidat idéal.<br>C'est gratuit !</h2>
+                <h2 class="mb-5">Vous êtes patron ? <br>Ajouter un emploi et trouver le candidat idéal.<br>C'est gratuit !</h2>
                 <a href="{{ path('job_new') }}" class="btn btn-danger">Ajouter un emploi</a>
             </div>
         </div>

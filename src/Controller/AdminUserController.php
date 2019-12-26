@@ -125,7 +125,10 @@ class AdminUserController extends AbstractController
                 $uploaderHelper->deleteUploadFile(new Filesystem(), '/coverLetter/', $fileCoverLetter);
             }
         }
-        $manager->remove($token);
+        if($token)
+        {
+            $manager->remove($token);
+        }
         $manager->remove($user);
         $manager->flush();
 

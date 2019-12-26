@@ -3,8 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/_form-job.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/_form-job.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/job/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/apply.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/apply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/newJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/newJob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/coverLetter/Lettre de motivation Developpeur Java pdf-5dfd116c32e19.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/coverLetter/Lettre de motivation Developpeur Java pdf-5e037e39558a1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/cvResume/CV-2019-dev-pdf-5dfd116c32bdc.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/cvResume/CV-2019-dev-pdf-5e037e39556e7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ApplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ApplyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/PasswordEdit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PasswordEdit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/apply/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/apply/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +214,8 @@
       <workItem from="1576855191058" duration="10150000" />
       <workItem from="1577285196901" duration="188000" />
       <workItem from="1577286466669" duration="281000" />
-      <workItem from="1577294621086" duration="5460000" />
+      <workItem from="1577294621086" duration="5577000" />
+      <workItem from="1577366290725" duration="7493000" />
     </task>
     <servers />
   </component>
@@ -230,10 +243,10 @@
       <screen x="0" y="23" width="1920" height="970" />
     </state>
     <state x="930" y="144" key="SettingsEditor/0.23.1920.970@0.23.1920.970" timestamp="1575726192167" />
-    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576855197554">
+    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1577366301134">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576855197554" />
+    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577366301134" />
     <state x="1114" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.973@0.23.1920.973" timestamp="1575825870031" />
     <state x="1069" y="235" width="670" height="754" key="search.everywhere.popup" timestamp="1576177703364">
       <screen x="0" y="0" width="1920" height="1080" />

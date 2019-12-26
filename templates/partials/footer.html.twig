@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h3 class="footer-heading mb-4 text-white">A propos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
+                <p>Easy Job est un site de reccherches d'emplois. <br><b>Ce site est un travail d'apprentissage...</b></p>
                 <p><a href="#" class="btn btn-primary pill text-white px-4">En savoir plus</a></p>
             </div>
             <div class="col-md-6">
@@ -14,19 +14,15 @@
                         <h3 class="footer-heading mb-4 text-white">Liens rapides</h3>
                         <ul class="list-unstyled">
                             <li><a href="{{ path('homepage') }}">Accueil</a></li>
-                            <li><a href="#">Trouver un emploi</a></li>
-                            <li><a href="#">Employeurs</a></li>
-                            <li><a href="#">S'inscrire</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{ path('job_index') }}">Trouver un emploi</a></li>
+                            <li><a href="{{ path('account_registration') }}">S'inscrire</a></li>
+                            <li><a href="{{ path('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="footer-heading mb-4 text-white">Catégories</h3>
+                        <h3 class="footer-heading mb-4 text-white">Action</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#">Full Time</a></li>
-                            <li><a href="#">Freelance</a></li>
-                            <li><a href="#">Temporary</a></li>
-                            <li><a href="#">Internship</a></li>
+                            <li><a href="{{ path('job_new') }}">Ajouter un emploi</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,10 +30,10 @@
 
 
             <div class="col-md-2">
-                <div class="col-md-12">
+                <div class="col-md-12 pl-0">
                     <h3 class="footer-heading mb-4 text-white">Sociaux</h3>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 pl-0">
                     <p>
                         <a href="#" class="pb-2 pr-2 pl-0"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="p-2"><i class="fab fa-twitter"></i></a>
@@ -49,7 +45,7 @@
         <div class="row pt-5 mt-5 text-center">
             <div class="col-md-12">
                 <p>
-                    &copy; All Rights Reserved | <strong>EASY JOB</strong>
+                    &copy; All Rights Reserved | <strong>EASY JOB - 2020</strong>
                 </p>
             </div>
 

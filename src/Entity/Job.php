@@ -27,8 +27,8 @@ class Job
      * @Assert\Length(
      *     min="5",
      *     minMessage="Le titre doit contenir au minimum 5 caractères !",
-     *     max="255",
-     *     maxMessage="Le titre doit contenir au maximum 255 caractères !",
+     *     max="50",
+     *     maxMessage="Le titre doit contenir au maximum 50 caractères !",
      *     groups={"job"}
      * )
      */
@@ -51,8 +51,8 @@ class Job
      *  @Assert\Length(
      *     min="5",
      *     minMessage="Le nom de l'entreprise doit contenir au minimum 5 caractères !",
-     *     max="255",
-     *     maxMessage="Le nom de l'entreprise doit contenir au maximum 255 caractères !",
+     *     max="50",
+     *     maxMessage="Le nom de l'entreprise doit contenir au maximum 50 caractères !",
      *     groups={"job"}
      * )
      */
@@ -85,7 +85,7 @@ class Job
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Veuillez indiquer une personne de contact !", groups={"job"})
-     * @Assert\Length(min="5", minMessage="La personne de contact doit contenir au minimum 5 caractères !", groups={"job"})
+     * @Assert\Length(min="5", minMessage="La personne de contact doit contenir au minimum 5 caractères !", max="70", maxMessage="La personne de contact doit contenir au maximum 70 caractères !", groups={"job"})
      */
     private $contactPerson;
 
