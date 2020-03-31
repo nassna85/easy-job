@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba01fd33-fd2c-4f0f-b7b4-3c3cfa6f6732" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +202,10 @@
       <workItem from="1577285196901" duration="188000" />
       <workItem from="1577286466669" duration="281000" />
       <workItem from="1577294621086" duration="5577000" />
-      <workItem from="1577366290725" duration="9995000" />
+      <workItem from="1577366290725" duration="15154000" />
+      <workItem from="1577457728119" duration="342000" />
+      <workItem from="1579719798685" duration="461000" />
+      <workItem from="1585650384096" duration="89000" />
     </task>
     <servers />
   </component>
@@ -209,36 +213,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser" timestamp="1576767907640">
+    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585650388753">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="773" y="263" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1576767907640" />
-    <state x="698" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576781809725">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="698" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576781809725" />
-    <state x="992" y="226" key="IDE.errors.dialog" timestamp="1575910821488">
-      <screen x="0" y="23" width="1920" height="970" />
-    </state>
-    <state x="992" y="226" key="IDE.errors.dialog/0.23.1920.970@0.23.1920.970" timestamp="1575910821488" />
-    <state x="607" y="363" key="NewPhpClassDialog" timestamp="1576772740897">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="607" y="363" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1576772740897" />
-    <state x="930" y="144" key="SettingsEditor" timestamp="1575726192167">
-      <screen x="0" y="23" width="1920" height="970" />
-    </state>
-    <state x="930" y="144" key="SettingsEditor/0.23.1920.970@0.23.1920.970" timestamp="1575726192167" />
-    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1577366301134">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1577366301134" />
-    <state x="1114" y="336" key="com.intellij.ide.util.TipDialog/0.23.1920.973@0.23.1920.973" timestamp="1575825870031" />
-    <state x="1069" y="235" width="670" height="754" key="search.everywhere.popup" timestamp="1576177703364">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1069" y="235" width="670" height="754" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1576177703364" />
-    <state x="1069" y="234" width="670" height="676" key="search.everywhere.popup/0.23.1920.970@0.23.1920.970" timestamp="1575761003762" />
-    <state x="1069" y="235" width="670" height="679" key="search.everywhere.popup/0.23.1920.973@0.23.1920.973" timestamp="1575765169140" />
+    <state x="1113" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585650388753" />
   </component>
 </project>
